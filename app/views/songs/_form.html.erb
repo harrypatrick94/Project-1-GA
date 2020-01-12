@@ -1,0 +1,21 @@
+<h3>Songs form</h3>
+<%= form_for @song do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :artist %>
+<%= f.text_field :artist %>
+
+<%= f.label :sheet %>
+<%= f.text_area :sheet %>
+
+<%= f.label :genre_id %>
+<select name="song[genre_id]">
+  <%= Genre.all.each do |genre| %>
+  <option value="<%= genre.id %>"><%= genre.name %></option>
+  <% end %>
+</select>
+
+<br>
+<%= f.submit %>
+<% end %>

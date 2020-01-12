@@ -1,0 +1,13 @@
+<h1>Index of Genres</h1>
+<div class="genre_list">
+  <ul class="genre_index_ul">
+    <% @genres.each do |g| %>
+      <li class="genre_index_li">
+        <%= link_to g.name, genre_path(g.id) %>
+      </li>
+    <% end %>
+      <li class="genre_index_li">
+        <%= link_to "Add", new_genre_path %>
+      </li>
+  </ul>
+</div>
