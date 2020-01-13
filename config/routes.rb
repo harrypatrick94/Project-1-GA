@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get '/login' => 'session#new'
 
-  post '/loging' => "session#create"
+  post '/login' => "session#create"
 
   delete '/login' => 'session#destroy'
   # Routes

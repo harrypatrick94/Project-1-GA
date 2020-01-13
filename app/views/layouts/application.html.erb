@@ -12,6 +12,13 @@
   <body>
     <h1>Welcome to the music lesson DB</h1>
     <br>
+    <header>
+      <nav>
+        <% if @current_user.present? %>
+        <%= link_to "logout", login_path, method: 'delete'%>
+      <% end %>
+      </nav>
+    </header>
     <hr>
     <%= yield %>
     <hr>

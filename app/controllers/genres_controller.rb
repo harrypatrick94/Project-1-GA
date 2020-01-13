@@ -1,5 +1,5 @@
 class GenresController < ApplicationController
-
+  before_action :check_for_user
   # CRUD
 
   # CREATE
@@ -9,9 +9,11 @@ class GenresController < ApplicationController
   end
   # 2. create
   def create
-    genre = Genre.create genre_params
 
-    redirect_to genres_path
+    genre = Genre.create genre_params
+    @current_user.genres << genre
+
+    redirect_to user_path(@current_user.id)
   end
 
   # READ

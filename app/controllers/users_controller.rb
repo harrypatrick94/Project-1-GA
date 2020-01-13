@@ -27,6 +27,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+
   end #index
 
   def show
@@ -38,5 +39,6 @@ class UsersController < ApplicationController
   def user_params
   # require and permit user
   params.require(:user).permit(:name, :email, :image, :bio, :password, :password_confirmation)
+end # end user_params
 
-end
+end # end user controller
