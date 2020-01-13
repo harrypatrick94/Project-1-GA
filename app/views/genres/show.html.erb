@@ -1,5 +1,7 @@
 <h1><%= @genre.name %></h1>
-<p><strong><%= link_to "Edit #{@genre.name}", edit_genre_path(@genre.id) %></strong> | <strong><%= link_to "Genres Index", genres_path	 %></strong></p>
+<h3>User ID: <%= session[:user_id] %></h3>
+<h3>User name: <%= @current_user.name %></h3>
+<p><strong><%= link_to "Edit #{@genre.name}", edit_genre_path(@genre.id) %></strong> | <strong><%= link_to "Genres Index", user_path(session[:user_id])	 %> | <strong><%= link_to "Delete Genre", genre_path(@genre.id), method: 'delete' %></strong></strong></p>
 <p>
   <%= @genre.description %>
 </p>

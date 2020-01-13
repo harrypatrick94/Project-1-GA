@@ -1,8 +1,8 @@
 Genre.destroy_all
 
-jazz = Genre.create! name: "Jazz", description: "Stylish, free flowing music"
-blues = Genre.create! name: "Blues", description: "Smooth emotional music"
-rock = Genre.create! name: "Rock", description: "Expresionist"
+jazz = Genre.create! name: "Jazz", description: "Stylish, free flowing music", image: "https://www.morrisonhotelgallery.com/images/big/LSA10.jpg"
+blues = Genre.create! name: "Blues", description: "Smooth emotional music", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Wp29TyxLTT7BEVEd0m8yHV2HzO1xlz1HpDl9dNaxGTk37CDZ4Q&s"
+rock = Genre.create! name: "Rock", description: "Expresionist", image: "https://consequenceofsound.net/wp-content/uploads/2014/06/ledzeppelin1.jpg?quality=80&w=807"
 
 puts "Created #{Genre.count} genres."
 

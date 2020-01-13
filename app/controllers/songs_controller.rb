@@ -11,7 +11,7 @@ class SongsController < ApplicationController
     def create
       Song.create song_params
 
-      redirect_to genres_path
+      redirect_to user_path(session[:user_id])
     end
 
     # READ
@@ -43,7 +43,7 @@ class SongsController < ApplicationController
     def destroy
       Song.destroy params[:id]
 
-      redirect_to genres_path
+      redirect_to user_path(session[:user_id])
     end
     def song_params
       params.require(:song).permit(:name, :artist, :sheet, :genre_id)

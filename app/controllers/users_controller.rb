@@ -34,6 +34,12 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
   end #show
 
+  def destroy
+    @user = User.find params[:id]
+    
+
+
+  end
   private
    #strong params give new and update access to param
   def user_params
