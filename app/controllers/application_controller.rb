@@ -21,6 +21,8 @@ class ApplicationController < ActionController::Base
   def check_for_user
     # Show pages can only be seen by logged in user
     redirect_to loggin_path unless @current_user.present?
-  end
+  end # check for user
+
+  
 
 end # ApplicationController

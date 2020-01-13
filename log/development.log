@@ -9169,3 +9169,4 @@ Processing by Rails::InfoController#routes as HTML
 Completed 200 OK in 51ms (Views: 44.0ms | ActiveRecord: 0.0ms)
 
 
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
