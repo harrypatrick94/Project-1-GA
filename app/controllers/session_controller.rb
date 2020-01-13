@@ -16,7 +16,7 @@ class SessionController < ApplicationController
       # fail login
       flash[:error] = "Invalid email or password"
       #  redirect to login page
-      redirect_to loggin_path
+      redirect_to login_path
     end # if
   end # create
 

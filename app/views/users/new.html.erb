@@ -1,34 +1,48 @@
-<h2>Create new account</h2>
-<div class="sign_up_form">
-  <h3>Sign up here</h3>
+<header>
+  <nav class="login-link"><strong><%= link_to "Login", login_path %></strong></nav>
+</header>
+<div class="sign_up_container">
+  <ul class="sign-up-form">
+    <% if @user.errors.any? %>
+        <% @user.errors.full_messages.each do |error| %>
+        <li>
+          <%= error %>
+        </li>
+        <% end %> <%# end each loop %>
+    <% end %> <%# end if %>
 
-  <% if @user.errors.any? %>
-    <p>Please correct the following</p>
-    <ul>
-      <% @user.errors.full_messages.each do |error| %>
-      <li>
-        <%= error %>
-      </li>
-      <% end %> <%# end each loop %>
-    </ul>
-  <% end %> <%# end if %>
-  <%= form_for @user do |f| %>
-  <%# ask form name %>
-    <%=  f.label :name %>
-    <%= f.text_field :name %>
-  <%# ask form email %>
-    <%=  f.label :email %>
-    <%= f.email_field :email %>
-  <%# ask for password %>
-    <%=  f.label :password %>
-    <%= f.password_field :password, class: 'form-control' %>
-  <%# confirm password %>
-    <%=  f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-    <br>
-
-    <%= f.submit  "Sign Up"%>
-
-  <% end %> <%# end form %>
+    <%= form_for @user do |f| %>
+    <%# ask form name %>
+    <li>
+      <%=  f.label :name %>
+    </li>
+    <li>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <%# ask form email %>
+      <%=  f.label :email %>
+    </li>
+    <li>
+      <%= f.email_field :email %>
+    </li>
+    <li>
+      <%# ask for password %>
+      <%=  f.label :password %>
+    </li>
+    <li>
+      <%= f.password_field :password, class: 'form-control' %>
+    </li>
+    <li>
+      <%# confirm password %>
+      <%=  f.label :confirm_password %>
+    </li>
+    <li>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </li>
+    <li>
+      <%= f.submit  "Sign Up"%>
+    </li>
+    <% end %> <%# end form %>
+  </ul>
 </div>

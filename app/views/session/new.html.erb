@@ -1,12 +1,12 @@
+<header>
+  <nav class="new-account"><strong><%= link_to "Sign up", new_user_path %></strong></nav>
+</header>
 <div class="login-container">
-
-
-
   <%= form_tag login_path do %>
     <ul class="login-form">
-      <li>
+      <!-- <li>
           <h2>login</h2>
-      </li>
+      </li> -->
       <li>
         <%# if previous login not successful show error %>
         <% if flash[:error] %>

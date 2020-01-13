@@ -1,7 +1,7 @@
 <h1><%= @genre.name %></h1>
-<h3>User ID: <%= session[:user_id] %></h3>
-<h3>User name: <%= @current_user.name %></h3>
-<p><strong><%= link_to "Edit #{@genre.name}", edit_genre_path(@genre.id) %></strong> | <strong><%= link_to "Genres Index", user_path(session[:user_id])	 %> | <strong><%= link_to "Delete Genre", genre_path(@genre.id), method: 'delete' %></strong></strong></p>
+<!-- <h3>User ID: <%= session[:user_id] %></h3>
+<h3>User name: <%= @current_user.name %></h3> -->
+
 <p>
   <%= @genre.description %>
 </p>
@@ -16,3 +16,10 @@
     <%= link_to image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwIbo8BO9d1bIMbyelghTD1oiPlMNmZ6e4iXDqQ5LxPGkT7lw8&s", class: "song-image"), new_song_path%>
   </li>
 </ul>
+<footer class="genre-nav">
+  <ul>
+    <li><nav><strong><%= link_to "Edit #{@genre.name}", edit_genre_path(@genre.id) %></strong></nav></li>
+    <li><nav><strong><%= link_to "Genres Index", user_path(session[:user_id])	 %></strong></nav></li>
+    <li><nav><strong><%= link_to "Delete Genre", genre_path(@genre.id), method: 'delete' %></strong></nav></li>
+  </ul>
+</footer>
