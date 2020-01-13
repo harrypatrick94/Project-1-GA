@@ -9,10 +9,10 @@
 <ul class="song_index_ul">
   <% @genre.songs.each do |song| %>
     <li class="song_index_li">
-      <%= link_to song.name, song_path(song.id) %>
+      <%= link_to image_tag(song.image, class: "song-image"), song_path(song.id) %>
     </li>
   <% end %>
   <li class="song_index_li">
-    <%= link_to "Add", new_song_path%>
+    <%= link_to image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwIbo8BO9d1bIMbyelghTD1oiPlMNmZ6e4iXDqQ5LxPGkT7lw8&s", class: "song-image"), new_song_path%>
   </li>
 </ul>

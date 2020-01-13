@@ -1,17 +1,33 @@
-<h2>login</h2>
-<%# if previous login not successful show error %>
-<% if flash[:error] %>
-  <strong><%= flash[:error] %></strong>
-<% end %> <%# end if flash %>
+<div class="login-container">
 
-<%= form_tag login_path do %>
 
-  <%= label_tag :email %>
-  <%= email_field_tag :email %>
-  <br>
-  <%=  label_tag :password %>
-  <%= password_field_tag :password %>
-  <br>
-  <%= submit_tag  "Login" %>
 
-<% end %>
+  <%= form_tag login_path do %>
+    <ul class="login-form">
+      <li>
+          <h2>login</h2>
+      </li>
+      <li>
+        <%# if previous login not successful show error %>
+        <% if flash[:error] %>
+          <strong><%= flash[:error] %></strong>
+        <% end %> <%# end if flash %>
+      </li>
+      <li>
+      <%= label_tag :email %>
+      </li>
+      <li>
+      <%= email_field_tag :email %>
+      </li>
+      <li>
+      <%=  label_tag :password %>
+      </li>
+      <li>
+      <%= password_field_tag :password %>
+      </li>
+      <li>
+      <%= submit_tag  "Login" %>
+      </li>
+    </ul>
+  <% end %>
+</div>

@@ -9,6 +9,9 @@
 <%= f.label :sheet %>
 <%= f.text_area :sheet %>
 
+<%= f.label :image, "Image URL" %>
+<%= f.text_field :image %>
+
 <%= f.label :genre_id %>
 <select name="song[genre_id]">
   <%= Genre.all.each do |genre| %>

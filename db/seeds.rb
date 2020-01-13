@@ -8,19 +8,20 @@ puts "Created #{Genre.count} genres."
 
 Song.destroy_all
 
-take_five = Song.create! name: "Take Five", artist: "Dave Brubeck", sheet: "Take Five sheet"
-at_last = Song.create! name: "At Last", artist: "Miles Davis", sheet: "At last sheet"
-how_blues = Song.create! name: "How Blues Can You Get", artist: "BB King", sheet: "How blues sheet"
-johnny_b = Song.create! name: "Johnny B Goode", artist: "Chuck Berry", sheet: "B Goode sheet"
-substitute = Song.create! name: "Substitute", artist: "The Who", sheet: "Substitute sheet"
-strange = Song.create! name: "People are Strange", artist: "The Doors", sheet: "Strange sheet"
+take_five = Song.create! name: "Take Five", artist: "Dave Brubeck", sheet: "Take Five sheet", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKuX6xp9fzRymcytREI97ASHglouxp371v2jgJ6GCtEBcNxaefrA&s"
+at_last = Song.create! name: "At Last", artist: "Miles Davis", sheet: "At last sheet", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjQhQfN-19tBjN0eSNuhGWzSIVTLXWBZoDtp63fFwjA3G-rPlLmg&s"
+how_blues = Song.create! name: "How Blues Can You Get", artist: "BB King", sheet: "How blues sheet", image: "https://m.media-amazon.com/images/I/819cnn-+YuL._SS500_.jpg"
+johnny_b = Song.create! name: "Johnny B Goode", artist: "Chuck Berry", sheet: "B Goode sheet", image: "https://i4.cdn.hhv.de/catalog/shop_detail_zoom/00614/614584.jpg"
+substitute = Song.create! name: "Substitute", artist: "The Who", sheet: "Substitute sheet", image: "https://img.discogs.com/dibsOcw02MySpJ3juRNcAXIGqdM=/fit-in/555x555/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1557590-1228223564.jpeg.jpg"
+strange = Song.create! name: "People are Strange", artist: "The Doors", sheet: "Strange sheet", image: "https://professionalmorondotcom.files.wordpress.com/2018/09/people-are-strange-by-the-doors.jpg"
+brown_sugar = Song.create! name: "Brown Sugar", artist: "Rolling Stones", sheet: "Sugar sheet", image: "https://images.recordsale.de/600/600/the-rolling-stones_brown-sugar_11.jpg"
 
 puts "Created #{Song.count} songs."
 
 
 jazz.songs << take_five << at_last
 blues.songs << how_blues << johnny_b
-rock.songs << substitute << strange
+rock.songs << substitute << strange << brown_sugar
 # at_last.genres << jazz
 # how_blues.genres << blues
 # johnny_b.genres << blues
@@ -38,7 +39,7 @@ jake = User.create! name: "Jake", email: "jake@hotmail.com", image: "Picture:her
 
 puts "You created #{User.count} users"
 
-harry.genres << blues << rock
+harry.genres << blues << rock << jazz
 jake.genres << jazz << blues
 
 puts "User #{User.first.name} like genres: #{User.first.genres.pluck(:name).join(', ')}"
