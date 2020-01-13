@@ -1,5 +1,5 @@
 <p>
-  <%= link_to "Edit #{@song.name}", edit_song_path(@song.id) %> | <%= link_to "Back to Genre", genre_path(@song.genre_id) %>
+  <%= link_to "Edit #{@song.name}", edit_song_path(@song.id) %> | <%= link_to "Back to Genre", genre_path(@song.genre_id) %> | <%= link_to 'Delete Song', song_path(@song.id), method: 'delete'%>
 </p>
 
 <h1><%= @song.name %></h1>

@@ -32,7 +32,13 @@ puts "Songs in #{Genre.last.name}: #{Genre.last.songs.pluck(:name).join(", ")}"
 
 User.destroy_all
 
-harry = User.create! name: "Harry", email: "harry@hotmail.com", image: "Picture:here", bio: "Haz"
-jake = User.create! name: "Jake", email: "Jake@hotmail.com", image: "Picture:here", bio: "Pigeon"
+harry = User.create! name: "Harry", email: "harry@hotmail.com", image: "Picture:here", bio: "Haz", password: "chicken"
+puts
+jake = User.create! name: "Jake", email: "jake@hotmail.com", image: "Picture:here", bio: "Pigeon", password: "chicken"
 
-puts "You created #{Genre.count} users"
+puts "You created #{User.count} users"
+
+harry.genres << blues << rock
+jake.genres << jazz << blues
+
+puts "User #{User.first.name} like genres: #{User.first.genres.pluck(:name).join(', ')}"

@@ -41,7 +41,9 @@ class SongsController < ApplicationController
     end
     # DESTROY
     def destroy
+      Song.destroy params[:id]
 
+      redirect_to genres_path
     end
     def song_params
       params.require(:song).permit(:name, :artist, :sheet, :genre_id)

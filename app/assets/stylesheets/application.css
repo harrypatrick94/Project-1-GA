@@ -45,7 +45,7 @@ li.genre_index_li, li.song_index_li {
 
 
 }
-li.genre_index_li a {
+li.genre_index_li a, li.song_index_li a {
   padding: 0 150px 368px;
 }
 a {
