@@ -29,7 +29,9 @@ class UsersController < ApplicationController
   end #index
 
   def show
+
     @user = User.find params[:id]
+    # raise "hell"
   end #show
 
   def destroy

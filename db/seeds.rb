@@ -1,8 +1,18 @@
+User.destroy_all
+
+harry = User.create! name: "Harry", email: "harry@hotmail.com", image: "Picture:here", bio: "Haz", password: "chicken"
+puts
+jake = User.create! name: "Jake", email: "jake@hotmail.com", image: "Picture:here", bio: "Pigeon", password: "chicken"
+
+puts "You created #{User.count} users"
+
+
 Genre.destroy_all
 
 jazz = Genre.create! name: "Jazz", description: "Stylish, free flowing music", image: "https://www.morrisonhotelgallery.com/images/big/LSA10.jpg"
 blues = Genre.create! name: "Blues", description: "Smooth emotional music", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Wp29TyxLTT7BEVEd0m8yHV2HzO1xlz1HpDl9dNaxGTk37CDZ4Q&s"
 rock = Genre.create! name: "Rock", description: "Expresionist", image: "https://consequenceofsound.net/wp-content/uploads/2014/06/ledzeppelin1.jpg?quality=80&w=807"
+punk = Genre.create! name: "Punk", description: "Fast and Hard", image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAY_yZT7yOw86u6dyaF1z0CZH2SEP3QNYbGOF_jlaUofV_yw9mVQ&s'
 
 puts "Created #{Genre.count} genres."
 
@@ -18,6 +28,10 @@ brown_sugar = Song.create! name: "Brown Sugar", artist: "Rolling Stones", sheet:
 
 puts "Created #{Song.count} songs."
 
+harry.genres << rock << punk
+jake.genres << jazz << blues
+
+puts "User #{User.first.name} like genres: #{User.first.genres.pluck(:name).join(', ')}"
 
 jazz.songs << take_five << at_last
 blues.songs << how_blues << johnny_b
@@ -30,16 +44,3 @@ rock.songs << substitute << strange << brown_sugar
 
 puts "Songs in #{Genre.first.name}: #{Genre.first.songs.pluck(:name).join(", ")}"
 puts "Songs in #{Genre.last.name}: #{Genre.last.songs.pluck(:name).join(", ")}"
-
-User.destroy_all
-
-harry = User.create! name: "Harry", email: "harry@hotmail.com", image: "Picture:here", bio: "Haz", password: "chicken"
-puts
-jake = User.create! name: "Jake", email: "jake@hotmail.com", image: "Picture:here", bio: "Pigeon", password: "chicken"
-
-puts "You created #{User.count} users"
-
-harry.genres << blues << rock << jazz
-jake.genres << jazz << blues
-
-puts "User #{User.first.name} like genres: #{User.first.genres.pluck(:name).join(', ')}"

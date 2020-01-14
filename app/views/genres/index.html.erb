@@ -3,11 +3,11 @@
   <ul class="genre_index_ul">
     <% @genres.each do |g| %>
       <li class="genre_index_li">
-        <%= link_to g.name, genre_path(g.id) %>
+        <%= link_to g.name, user_genre_path(@current_user.id, g.id) %>
       </li>
     <% end %>
       <li class="genre_index_li">
-        <%= link_to "Add", new_genre_path %>
+        <%= link_to "Add", new_user_genre_path(@current_user.id) %>
       </li>
   </ul>
 </div>

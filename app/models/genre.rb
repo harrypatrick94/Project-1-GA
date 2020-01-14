@@ -1,5 +1,4 @@
 class Genre < ApplicationRecord
   has_many :songs
-
-  has_and_belongs_to_many :users
+  belongs_to :users, optional: true
 end

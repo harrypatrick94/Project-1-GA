@@ -7,7 +7,7 @@ class GenresController < ApplicationController
   def new
     @genre = Genre.new
     @user_id = @current_user.id
-
+    # raise "hell"
   end
   # 2. create
   def create
@@ -21,11 +21,14 @@ class GenresController < ApplicationController
   # READ
   # Index of everthing
   def index
+    @current_user
     @genres = Genre.all
+
   end
   # show individual db
   def show
     # raise "Hell"
+    @user_id = params[:user_id]
     @genre = Genre.find params[:id]
     @genre_id = @genre.id
     # raise "Hell"

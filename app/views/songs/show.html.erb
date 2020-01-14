@@ -47,11 +47,11 @@
 <footer class="song-nav">
   <ul class="song-nav-ul">
     <li class="song-nav-li"><nav><strong><%= link_to "Edit #{@song.name}", edit_song_path(@song.id) %></strong></nav></li>
-    <li class="song-nav-li"><nav><strong><%= link_to "Back to Genre", user_path(session[:user_id]) %></strong></nav>
+    <li class="song-nav-li"><nav><strong><%= link_to "Back to Genre Index", user_path(session[:user_id]) %></strong></nav>
     </li>
     <li>
       <nav><strong><%= link_to "Back to #{@genre_name}", genre_path(@genre_id) %></strong></nav>
     </li>
-    <li class="song-nav-li"><strong><nav><%= link_to 'Delete Song', song_path(@song.id), method: 'delete'%></nav></strong></li>
+    <li class="song-nav-li"><strong><nav><%= link_to 'Delete Song', song_path( @song.id), method: 'delete'%></nav></strong></li>
   </ul>
 </footer>

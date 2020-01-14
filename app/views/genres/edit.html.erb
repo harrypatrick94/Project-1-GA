@@ -10,7 +10,7 @@
       <nav><strong><%= link_to "Genres Index", user_path(@current_user.id) %></strong></nav>
     </li>
     <li class="genre-nav-li">
-      <nav><strong><%= link_to "Back to #{@genre.name}", genre_path(@genre.id) %></strong></nav>
+      <nav><strong><%= link_to "Back to #{@genre.name}", genre_path( @genre.id) %></strong></nav>
     </li>
   </ul>
 </footer>

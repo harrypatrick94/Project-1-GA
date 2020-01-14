@@ -6,9 +6,9 @@ class SongsController < ApplicationController
     # 1. new
     def new
       @song = Song.new
-      @genre = Genre.find params[:id]
-      @genre_name = @genre.name
-      @genre_id = @genre.id
+      # @genre = Genre.find params[:id]
+      # @genre_name = @genre.name
+      # @genre_id = @genre.id
     end
     # 2. create
     def create
@@ -30,13 +30,17 @@ class SongsController < ApplicationController
       genre = Genre.find @genre_id
       @genre_name = genre.name
       @song = Song.find params[:id]
-
+      # raise "hell"
     end
 
     # UPDATE
     # 1. prefilled form
     def edit
+
       @song = Song.find params[:id]
+      @genre_id = @song.genre_id
+      genre = Genre.find @genre_id
+      @genre_name = genre.name
 
     end
     # 2. udpate
@@ -44,6 +48,7 @@ class SongsController < ApplicationController
       # find the songs to be edited
       song = Song.find params[:id]
       # edit genre
+      genre_id = song.genre_id
       song.update song_params
 
       redirect_to song_path(song.id)

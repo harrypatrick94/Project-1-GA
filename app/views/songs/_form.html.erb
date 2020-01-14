@@ -25,14 +25,25 @@
     <li>
       <%= f.text_field :image %>
     </li>
-    <li>
+    <!-- <li>
       <%= f.label :genre_id %>
       <select name="song[genre_id]">
-        <option value="<%= @genre.id %>"><%= @genre.name %></option>
+        <option value="<%= @genre_id %>"><%= @genre_name %></option>
       </select>
     </li>
     <li>
       <%= f.submit %>
+    </li> -->
+    <li>
+      <%= f.label :genre_id %>
+    </li>
+    <li>
+      <select  name="song[genre_id]">
+        <% Genre.all.each do |g| %>
+        <option value="<%= g.id %>"><%= g.name %></option>
+
+        <% end %>
+      </select>
     </li>
       <% end %>
   <ul>
