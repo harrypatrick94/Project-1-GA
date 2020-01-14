@@ -1,13 +1,28 @@
-<%= form_for @genre do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
+<div class="genre-form-container">
+  <%= form_for @genre do |f| %>
+  <ul class="genre-form">
+    <li>
+      <%= f.label :name %>
+    </li>
+    <li>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <%= f.label :description %>
+    </li>
+    <li>
+      <%= f.text_area :description %>
+    </li>
+    <li>
+      <%= f.label :image %>
+    </li>
+    <li>
+      <%= f.text_field :image %>
+    </li>
+    <li>
+      <%= f.submit %>
+    </li>
 
-<%= f.label :description %>
-<%= f.text_area :description %>
-
-<%= f.label :image %>
-<%= f.text_field :image %>
-
-<br>
-<%= f.submit %>
-<% end %>
+  <% end %>
+  </ul>
+</div>

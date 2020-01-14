@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   # before_action all pages are only visible when logged in except new
-  before_action :check_for_user, except: [:new]
+  before_action :check_for_user, except: [:new, :create]
 
   def new
     # create new user
@@ -22,12 +22,10 @@ class UsersController < ApplicationController
       # back to new
       render :new
     end # if
-
   end # create
 
   def index
     @users = User.all
-
   end #index
 
   def show
@@ -36,9 +34,6 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find params[:id]
-    
-
-
   end
   private
    #strong params give new and update access to param

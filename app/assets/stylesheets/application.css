@@ -87,27 +87,30 @@ li.genre_index_li:hover, li.song_index_li:hover{
 }
 
 /* login form */
-.login-container, .sign_up_container {
+.login-container, .sign-up-container  {
   display: flex;
   justify-content: center;
   margin-top: 130px;
 }
 
-.login-form ul, .sign-up-from ul {
-
+.genre-form-container, .song-form-container {
+  display: flex;
+  justify-content: center;
 }
-.login-form, .sign-up-form {
+
+
+.login-form, .sign-up-form , .genre-form, .song-form {
   border: 4px solid white;
   border-radius: 15px;
   padding: 60px 80px;
-  opacity: 0.8;
-  background-color: black;
+  /* opacity: 0.8; */
+  background-color: rgba(0, 0, 0, 0.8);
   box-shadow: 10px 10px 10px 10px black;
   text-align: center;
 
 }
 
-.login-form li, .sign-up-form li {
+.login-form li, .sign-up-form li, .genre-form li, .song-form li {
   margin: 3px 0;
 }
 /* Sign in page */
@@ -117,4 +120,49 @@ nav.new-account, nav.login-link, a.logout-path {
   font-size: 20px;
   margin: 8px 20px;
   text-shadow: 3px 3px black;
+}
+
+/* Genre page */
+.genre-nav, .song-nav {
+  display: flex;
+  justify-content: flex-end;
+
+
+}
+.genre-nav-ul, .song-nav-ul {
+  position: absolute;
+  bottom: 0;
+
+}
+.genre-nav li, .song-nav li{
+  display: inline-flex;
+  margin-bottom: 5px;
+  margin-right: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.genre-type-container {
+  box-shadow: 10px 10px 20px 10px black;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 15px;
+}
+.new-song-container {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.new-song-heading h1 {
+  text-shadow: 10px 10px 20px 10px black;
+}
+
+.song-info-container {
+  display: flex;
+  justify-content: center;
+}
+.song-nav-ul {
+
+
 }

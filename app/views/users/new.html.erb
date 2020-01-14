@@ -1,7 +1,7 @@
 <header>
   <nav class="login-link"><strong><%= link_to "Login", login_path %></strong></nav>
 </header>
-<div class="sign_up_container">
+<div class="sign-up-container">
   <ul class="sign-up-form">
     <% if @user.errors.any? %>
         <% @user.errors.full_messages.each do |error| %>

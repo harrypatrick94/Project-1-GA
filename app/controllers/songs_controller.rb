@@ -6,12 +6,17 @@ class SongsController < ApplicationController
     # 1. new
     def new
       @song = Song.new
+      @genre = Genre.find params[:id]
+      @genre_name = @genre.name
+      @genre_id = @genre.id
+      
     end
     # 2. create
     def create
       Song.create song_params
+      last_id = Song.last.genre_id
 
-      redirect_to user_path(session[:user_id])
+      redirect_to genre_path(last_id)
     end
 
     # READ
@@ -21,6 +26,10 @@ class SongsController < ApplicationController
     end
     # show individual db
     def show
+      song = Song.find params[:id]
+      @genre_id = song.genre_id
+      genre = Genre.find @genre_id
+      @genre_name = genre.name
       @song = Song.find params[:id]
     end
 
@@ -41,11 +50,16 @@ class SongsController < ApplicationController
     end
     # DESTROY
     def destroy
-      Song.destroy params[:id]
 
-      redirect_to user_path(session[:user_id])
+      song = Song.find params[:id]
+      genre_id = song.genre_id
+
+      Song.destroy params[:id]
+      # find the id of song being deleted the saved and use it
+
+      redirect_to genre_path(genre_id)
     end
     def song_params
-      params.require(:song).permit(:name, :artist, :sheet, :genre_id)
+      params.require(:song).permit(:name, :artist, :sheet, :genre_id, :image)
     end
 end

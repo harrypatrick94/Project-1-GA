@@ -16,6 +16,7 @@
       <nav>
         <% if @current_user.present? %>
         <strong><%= link_to "Log out", login_path, method: 'delete', class: "logout-path"%></strong>
+        <% else %>
       <% end %>
       </nav>
     </header>

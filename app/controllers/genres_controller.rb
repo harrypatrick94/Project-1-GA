@@ -23,6 +23,7 @@ class GenresController < ApplicationController
   end
   # show individual db
   def show
+    # raise "Hell"
     @genre = Genre.find params[:id]
   end
 

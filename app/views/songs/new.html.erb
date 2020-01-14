@@ -1,3 +1,15 @@
-<h1>New Song</h1>
-<%= link_to "Genres Index", user_path(session[:user_id]) %>
+<div class="new-song-container">
+  <div class="new-song-heading">
+    <h1>New Song</h1>
+  </div>
+</div>
 <%= render partial: 'form' %>
+<footer class="song-nav">
+    <ul class="song-nav-ul">
+      <li class="song-nav-li"><nav><strong><%= link_to "Back to Genre", user_path(session[:user_id]) %></strong></nav>
+      </li>
+      <li>
+        <nav><strong><%= link_to "Back to #{@genre_name}", genre_path(@genre_id) %></strong></nav>
+      </li>
+    </ul>
+</footer>
