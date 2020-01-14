@@ -9,7 +9,6 @@ class SongsController < ApplicationController
       @genre = Genre.find params[:id]
       @genre_name = @genre.name
       @genre_id = @genre.id
-      
     end
     # 2. create
     def create
@@ -31,6 +30,7 @@ class SongsController < ApplicationController
       genre = Genre.find @genre_id
       @genre_name = genre.name
       @song = Song.find params[:id]
+
     end
 
     # UPDATE

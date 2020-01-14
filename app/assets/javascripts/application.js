@@ -12,3 +12,6 @@
 //
 //= require rails-ujs
 //= require_tree .
+// require("<javascripts>/jquery.js")
+// require tone.js
+// require piano.js

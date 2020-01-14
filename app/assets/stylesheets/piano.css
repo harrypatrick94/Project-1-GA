@@ -31,6 +31,7 @@
      align-items: flex-end;
      padding-bottom: 10px;
      font-weight: bold;
+     color: black;
 }
  ul .key:last-child {
      border-right: 1px solid black;

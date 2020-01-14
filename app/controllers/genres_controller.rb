@@ -6,6 +6,8 @@ class GenresController < ApplicationController
   # 1. new
   def new
     @genre = Genre.new
+    @user_id = @current_user.id
+
   end
   # 2. create
   def create
@@ -25,6 +27,8 @@ class GenresController < ApplicationController
   def show
     # raise "Hell"
     @genre = Genre.find params[:id]
+    @genre_id = @genre.id
+    # raise "Hell"
   end
 
   # UPDATE
@@ -36,8 +40,10 @@ class GenresController < ApplicationController
   # 2. udpate
   def update
     # find the genre to be edited
-    genre = Genre.find params[:id]
+    # genre = Genre.find params[:id]
     # edit genre
+    # raise 'hell'
+    genre = @current_user.genres.find params[:id]
     genre.update genre_params
 
     redirect_to genre_path(genre.id)
@@ -50,6 +56,6 @@ class GenresController < ApplicationController
   end
   private
 def genre_params
-  params.require(:genre).permit(:name, :description)
+  params.require(:genre).permit(:name, :description, :image)
 end
 end

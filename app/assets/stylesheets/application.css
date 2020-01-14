@@ -120,6 +120,7 @@ nav.new-account, nav.login-link, a.logout-path {
   font-size: 20px;
   margin: 8px 20px;
   text-shadow: 3px 3px black;
+  text-shadow: 2px 2px black;
 }
 
 /* Genre page */
@@ -138,7 +139,8 @@ nav.new-account, nav.login-link, a.logout-path {
   display: inline-flex;
   margin-bottom: 5px;
   margin-right: 15px;
-  background-color: rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px black;
+  border-radius: 10px;
 
 }
 
@@ -148,14 +150,14 @@ nav.new-account, nav.login-link, a.logout-path {
   justify-content: flex-start;
   padding-left: 15px;
 }
-.new-song-container {
+.new-song-container, .new-genre-container, .genre-edit-container {
   display: flex;
   justify-content: space-around;
 
 }
 
-.new-song-heading h1 {
-  text-shadow: 10px 10px 20px 10px black;
+.new-song-heading h1, .new-genre-heading h1, .new-genre-heading p, .genre-edit-container h1 {
+  text-shadow: 3px 3px black;
 }
 
 .song-info-container {

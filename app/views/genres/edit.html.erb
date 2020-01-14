@@ -1,3 +1,17 @@
-<h2>Edit <%= @genre.name %></h2>
-<p><strong><%= link_to "Genres Index", genres_path %></strong> | <strong><%= link_to "Back to #{@genre.name}", genre_path(@genre.id) %></strong></p>
+<div class="genre-edit-container">
+  <div>
+    <h1>Edit <%= @genre.name %></h1>
+  </div>
+</div>
 <%= render partial: 'form' %>
+<footer class="genre-nav">
+  <ul class="genre-nav-ul">
+    <li class="genre-nav-li">
+      <nav><strong><%= link_to "Genres Index", user_path(@current_user.id) %></strong></nav>
+    </li>
+    <li class="genre-nav-li">
+      <nav><strong><%= link_to "Back to #{@genre.name}", genre_path(@genre.id) %></strong></nav>
+    </li>
+  </ul>
+</footer>
+<%# need to make a new route and like the new song route %>
