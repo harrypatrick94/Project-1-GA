@@ -6,11 +6,11 @@ Rails.application.routes.draw do
 
   delete '/login' => 'session#destroy'
 # new song
-  get 'users/:user_id/genres/:genre_id/songs/new' => 'songs#new', as: :new_song_in_genre
+  get '/genres/:genre_id/songs/new' => 'songs#new', as: :new_song_in_genre
 # show song
   get 'users/:user_id/genres/:genre_id/songs/:id' => 'songs#show', as: :song_in_genre
 # edit song
-  get 'users/:user_id/genres/:genre_id/songs/:id/edit' => 'songs#edit', as: :edit_song_in_genre
+  get '/genres/:genre_id/songs/:id/edit' => 'songs#edit', as: :edit_song_in_genre
 # new genre
   get 'users/:user_id/genres/new' => 'genres#edit', as: :new_genre_in_user
 # show genres

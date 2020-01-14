@@ -6,9 +6,9 @@ class SongsController < ApplicationController
     # 1. new
     def new
       @song = Song.new
-      # @genre = Genre.find params[:id]
-      # @genre_name = @genre.name
-      # @genre_id = @genre.id
+      @genre = Genre.find params[:genre_id]
+      @genre_name = @genre.name
+      @genre_id = @genre.id
     end
     # 2. create
     def create
