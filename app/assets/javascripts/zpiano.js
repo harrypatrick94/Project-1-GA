@@ -1,5 +1,5 @@
 // creates new synth call synth
-const synthDefalt = new Tone.Synth().toMaster();
+const synthDefault = new Tone.Synth().toMaster();
 const synthDuo = new Tone.DuoSynth ().toMaster();
 const synthMetal = new Tone.MetalSynth ().toMaster();
 
