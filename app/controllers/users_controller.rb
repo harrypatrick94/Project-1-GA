@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   # before_action all pages are only visible when logged in except new
   before_action :check_for_user, except: [:new, :create]
-
+  # before_action :user_match_id
   def new
     # create new user
     @user = User.new

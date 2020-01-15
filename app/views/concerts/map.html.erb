@@ -1,0 +1,44 @@
+<h1>Concerts near me</h1>
+
+<style>
+  #map {
+    height: 100%;
+}
+
+html, body {
+       height: 100%;
+       margin: 0;
+       padding: 0;
+     }
+</style>
+<div id="map"></div>
+
+<script>
+
+
+const concerts = <%= @concerts.to_json.html_safe %>
+
+function initMap() {
+  // var myLatLng = {lat: -25.363, lng: 131.044};
+  var bounds = new google.maps.LatLngBounds(); // need id to work
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 10,
+    center: {lat: concerts[0].latitude, lng: concerts[0].longitude }
+  }); //map
+  for ( let i = 0; 1 < concerts.length; i++){
+    const concert = concerts[i];
+    var marker = new google.maps.Marker({
+      position: {lat: concert.latitude, lng: concert.longitude},
+      map: map,
+      title: concert.name
+    }); // marker
+  // bounds.extend(marker.position);
+  } //# for
+ // map.fitBounds(bounds);
+}
+</script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUB5kvBZjtPLVhds1s7ETFU-SC9BPT-J4&callback=initMap">
+    </script>

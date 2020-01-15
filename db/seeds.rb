@@ -44,3 +44,14 @@ rock.songs << substitute << strange << brown_sugar
 
 puts "Songs in #{Genre.first.name}: #{Genre.first.songs.pluck(:name).join(", ")}"
 puts "Songs in #{Genre.last.name}: #{Genre.last.songs.pluck(:name).join(", ")}"
+
+Artist.destroy_all
+acdc = Artist.create! name: "ACDC"
+tv = Artist.create! name: "Tunnel Vision"
+
+puts "Created #{Artist.count} artists, Last one called #{Artist.last.name}"
+
+Concert.destroy_all
+bdo = Concert.create! name: "Big Day Out"
+
+puts "Created #{Concert.count} concert, Last one called #{Concert.last.name}"

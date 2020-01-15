@@ -49,3 +49,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # for heroku
 gem 'rails_12factor', group: :production
+
+gem "geocoder", "~> 1.6"
