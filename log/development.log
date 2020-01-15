@@ -41789,3 +41789,161 @@ ActionView::Template::Error (undefined local variable or method `cloudinary_js_c
     13:   <body>
   
 app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1567481064913871539_70338333235340'
+Started GET "/login" for ::1 at 2020-01-15 11:42:04 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( tone.js )` to `config/initializers/assets.rb` and restart your server):
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%=  javascript_include_tag 'tone.js'%>
+    11:     <%= cloudinary_js_config %>
+    12:   </head>
+    13: 
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1567481064913871539_70338337554880'
+Started GET "/login" for ::1 at 2020-01-15 11:42:10 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( tone.js )` to `config/initializers/assets.rb` and restart your server):
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%=  javascript_include_tag 'tone.js'%>
+    11:     <%= cloudinary_js_config %>
+    12:   </head>
+    13: 
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1567481064913871539_70338283094300'
+Started GET "/login" for ::1 at 2020-01-15 11:42:24 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( tone.js )` to `config/initializers/assets.rb` and restart your server):
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%=  javascript_include_tag 'tone'%>
+    11:     <%= cloudinary_js_config %>
+    12:   </head>
+    13: 
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1567481064913871539_70338333053680'
+Started POST "/__web_console/repl_sessions/effb6eb7fb7dfe14ed328c4f76abade7/trace" for ::1 at 2020-01-15 11:42:30 +1100
+Started GET "/login" for ::1 at 2020-01-15 11:42:54 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 249ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `cloudinary_js_config' for #<#<Class:0x007ff1d6bc8ed0>:0x007ff1d7293e18>):
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:   
+    11:     <%= cloudinary_js_config %>
+    12:   </head>
+    13: 
+    14:   <body>
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1567481064913871539_70338336802180'
+Started GET "/" for ::1 at 2020-01-15 11:43:36 +1100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb (1.6ms)
+Completed 200 OK in 15ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-01-15 11:43:39 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 227ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `cloudinary_js_config' for #<#<Class:0x007ff1d6bc8ed0>:0x007ff1d4a81448>):
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:   
+    11:     <%= cloudinary_js_config %>
+    12:   </head>
+    13: 
+    14:   <body>
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1567481064913871539_70338315751360'
+Started GET "/login" for ::1 at 2020-01-15 11:46:19 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 224ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `cloudinary_js_config' for #<#<Class:0x007ff1d6bc8ed0>:0x007ff1d6c45958>):
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:   
+    11:     <%= cloudinary_js_config %>
+    12:   </head>
+    13: 
+    14:   <body>
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1567481064913871539_70338333499920'
+Started GET "/" for ::1 at 2020-01-15 11:50:10 +1100
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-01-15 11:50:15 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 764ms (Views: 757.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-01-15 11:50:28 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"clEBU2X+TVW4bNpyZc3fYN+RA75b16cz67WPakbxdYN4/tdyiO8azFlJZCA6RJCdKoDDRcdmml51oGKaLx245g==", "email"=>"harry@hotmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "harry@hotmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:8
+Redirected to http://localhost:3000/users/61
+Completed 302 Found in 255ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/users/61" for ::1 at 2020-01-15 11:50:29 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"61"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."user_id" = $1[0m  [["user_id", 61]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (46.6ms)
+Completed 200 OK in 72ms (Views: 60.7ms | ActiveRecord: 5.7ms)
+
+
