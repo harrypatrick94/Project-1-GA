@@ -42110,3 +42110,39 @@ Checked in these paths:
   
 app/assets/javascripts/application.js:16
 app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___3589460290191208563_70230228538480'
+Started GET "/users/61" for ::1 at 2020-01-15 12:27:20 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"61"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."user_id" = $1[0m  [["user_id", 61]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tone.js' with type 'application/javascript'
+Checked in these paths: 
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/config
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/images
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/javascripts
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/stylesheets
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/html
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/actionview-5.2.4.1/lib/assets/compiled
+  /Users/harrypatrick/sei/projects/project1/musik-db/node_modules):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%= cloudinary_js_config %>
+    11:   </head>
+    12: 
+  
+app/assets/javascripts/application.js:14
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___3589460290191208563_70230205112080'
