@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # define fetch users this will set current user
   # run this code in every method of every container
   before_action :fetch_user
-  
+
   def fetch_user
     # Step 1. check if session[:user_id] is set and valid
     if session[:user_id].present?
@@ -19,14 +19,41 @@ class ApplicationController < ActionController::Base
      # raise "hell"
   end # fetch_user
 
-  def user_match_id
-    @current_user = User.find_by id: session[:user_id]
-    if @current_user == params[:id]
+  # def user_match_id
+  #   @check_current_user = User.find_by id: session[:user_id]
+  #   if @check_current_user.id == session[:user_id]
+  #
+  #   else
+  #     redirect_to user_path(@check_current_user.id)
+  #   end # if
+  # end # user_match_id
 
-    else
-      redirect_to user_path(@current_user.id)
-    end # if
-  end # user_match_id
+  def user_match_id
+
+    # check to see current user id is equal to the id of who's logged in
+
+    if @current_user.id.present?
+
+      logged_in_user = @current_user.id.to_i
+      path_trying_access = params[:id].to_i
+
+      if logged_in_user != path_trying_access
+        redirect_to user_path(@current_user.id)
+
+      end
+
+      # if @current_user.id != params[:id]
+      #   p "#{@current_user.id} #{params[:id]}"
+      #   puts "Everything All noo"
+      #   p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+      #   redirect_to user_path(@current_user.id)
+      #
+      # end
+
+
+    end
+
+  end
 
   def check_for_user
     # Show pages can only be seen by logged in user

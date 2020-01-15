@@ -9,10 +9,10 @@ puts "You created #{User.count} users"
 
 Genre.destroy_all
 
-jazz = Genre.create! name: "Jazz", description: "Stylish, free flowing music", image: "https://www.morrisonhotelgallery.com/images/big/LSA10.jpg"
-blues = Genre.create! name: "Blues", description: "Smooth emotional music", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Wp29TyxLTT7BEVEd0m8yHV2HzO1xlz1HpDl9dNaxGTk37CDZ4Q&s"
+jazz = Genre.create! name: "Jazz", description: "Stylish, free flowing music", image: "https://res.cloudinary.com/dm0vmiksn/image/upload/v1579059763/t1xbb4i0miszhip5la1k.jpg"
+blues = Genre.create! name: "Soul", description: "Smooth emotional music", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Wp29TyxLTT7BEVEd0m8yHV2HzO1xlz1HpDl9dNaxGTk37CDZ4Q&s"
 rock = Genre.create! name: "Rock", description: "Expresionist", image: "https://consequenceofsound.net/wp-content/uploads/2014/06/ledzeppelin1.jpg?quality=80&w=807"
-punk = Genre.create! name: "Punk", description: "Fast and Hard", image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAY_yZT7yOw86u6dyaF1z0CZH2SEP3QNYbGOF_jlaUofV_yw9mVQ&s'
+punk = Genre.create! name: "Punk", description: "Fast, Hard and arnarchist", image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAY_yZT7yOw86u6dyaF1z0CZH2SEP3QNYbGOF_jlaUofV_yw9mVQ&s'
 
 puts "Created #{Genre.count} genres."
 
@@ -25,6 +25,7 @@ johnny_b = Song.create! name: "Johnny B Goode", artist: "Chuck Berry", sheet: "B
 substitute = Song.create! name: "Substitute", artist: "The Who", sheet: "Substitute sheet", image: "https://img.discogs.com/dibsOcw02MySpJ3juRNcAXIGqdM=/fit-in/555x555/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1557590-1228223564.jpeg.jpg"
 strange = Song.create! name: "People are Strange", artist: "The Doors", sheet: "Strange sheet", image: "https://professionalmorondotcom.files.wordpress.com/2018/09/people-are-strange-by-the-doors.jpg"
 brown_sugar = Song.create! name: "Brown Sugar", artist: "Rolling Stones", sheet: "Sugar sheet", image: "https://images.recordsale.de/600/600/the-rolling-stones_brown-sugar_11.jpg"
+politicains = Song.create! name: "Politicains in my Eyes", artist: "Death", sheet: 'death sheet', image: "image"
 
 puts "Created #{Song.count} songs."
 
@@ -36,6 +37,7 @@ puts "User #{User.first.name} like genres: #{User.first.genres.pluck(:name).join
 jazz.songs << take_five << at_last
 blues.songs << how_blues << johnny_b
 rock.songs << substitute << strange << brown_sugar
+punk.songs << politicains
 # at_last.genres << jazz
 # how_blues.genres << blues
 # johnny_b.genres << blues
