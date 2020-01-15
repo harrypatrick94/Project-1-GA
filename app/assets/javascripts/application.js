@@ -14,3 +14,5 @@
 //= require_tree .
 //= require tone.js
 //= require zpiano.js
+//
+//= stub 'zpiano'

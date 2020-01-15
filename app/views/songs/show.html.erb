@@ -1,4 +1,7 @@
 
+
+
+
 <div class="song-info-container">
   <div class="sing-info">
     <h1><%= @song.name %></h1>
@@ -57,3 +60,4 @@
     <li class="song-nav-li"><strong><nav><%= link_to 'Delete Song', song_path( @song.id), method: 'delete'%></nav></strong></li>
   </ul>
 </footer>
+  <%= javascript_include_tag 'zpiano' %>
