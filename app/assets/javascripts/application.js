@@ -11,6 +11,6 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require_self
-//= require tone
-//= require zpiano
+//= require_tree .
+//= require tone.js
+//= require zpiano.js

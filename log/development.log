@@ -42146,3 +42146,437 @@ Checked in these paths:
   
 app/assets/javascripts/application.js:14
 app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___3589460290191208563_70230205112080'
+Started GET "/songs/314" for ::1 at 2020-01-15 12:35:15 +1100
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"314"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:28
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tone' with type 'application/javascript'
+Checked in these paths: 
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/config
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/images
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/javascripts
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/stylesheets
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/html
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/actionview-5.2.4.1/lib/assets/compiled
+  /Users/harrypatrick/sei/projects/project1/musik-db/node_modules):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%= cloudinary_js_config %>
+    11:   </head>
+    12: 
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___3589460290191208563_70230235862720'
+Started GET "/songs/314" for ::1 at 2020-01-15 12:35:59 +1100
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"314"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:28
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%= cloudinary_js_config %>
+    11:   </head>
+    12: 
+  
+app/assets/javascripts/application.js:14
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___3589460290191208563_70230184371660'
+Started GET "/songs/314" for ::1 at 2020-01-15 12:36:06 +1100
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"314"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:28
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tone' with type 'application/javascript'
+Checked in these paths: 
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/config
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/images
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/javascripts
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/stylesheets
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/html
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/actionview-5.2.4.1/lib/assets/compiled
+  /Users/harrypatrick/sei/projects/project1/musik-db/node_modules):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%= cloudinary_js_config %>
+    11:   </head>
+    12: 
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___3589460290191208563_70230187780860'
+Started GET "/songs/314" for ::1 at 2020-01-15 12:36:23 +1100
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"314"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:28
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tone.js' with type 'application/javascript'
+Checked in these paths: 
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/config
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/images
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/javascripts
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/stylesheets
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/html
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/actionview-5.2.4.1/lib/assets/compiled
+  /Users/harrypatrick/sei/projects/project1/musik-db/node_modules):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%= cloudinary_js_config %>
+    11:   </head>
+    12: 
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___3589460290191208563_70230204340320'
+Started GET "/songs/314" for ::1 at 2020-01-15 12:36:29 +1100
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"314"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:28
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[36mCACHE Song Load (0.1ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tone.js' with type 'application/javascript'
+Checked in these paths: 
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/config
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/images
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/javascripts
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/stylesheets
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/html
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/actionview-5.2.4.1/lib/assets/compiled
+  /Users/harrypatrick/sei/projects/project1/musik-db/node_modules):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%= cloudinary_js_config %>
+    11:   </head>
+    12: 
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___3589460290191208563_70230187125140'
+Started GET "/login" for ::1 at 2020-01-15 12:36:47 +1100
+Processing by SessionController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tone.js' with type 'application/javascript'
+Checked in these paths: 
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/config
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/images
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/javascripts
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/stylesheets
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/html
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/actionview-5.2.4.1/lib/assets/compiled
+  /Users/harrypatrick/sei/projects/project1/musik-db/node_modules):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%= cloudinary_js_config %>
+    11:   </head>
+    12: 
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___3589460290191208563_70230177847440'
+Started GET "/login" for ::1 at 2020-01-15 12:36:47 +1100
+Processing by SessionController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tone.js' with type 'application/javascript'
+Checked in these paths: 
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/config
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/images
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/javascripts
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/stylesheets
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/html
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/actionview-5.2.4.1/lib/assets/compiled
+  /Users/harrypatrick/sei/projects/project1/musik-db/node_modules):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%= cloudinary_js_config %>
+    11:   </head>
+    12: 
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___3589460290191208563_70230204255840'
+Started GET "/login" for ::1 at 2020-01-15 12:36:50 +1100
+Processing by SessionController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tone.js' with type 'application/javascript'
+Checked in these paths: 
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/config
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/images
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/javascripts
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/stylesheets
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/html
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/actionview-5.2.4.1/lib/assets/compiled
+  /Users/harrypatrick/sei/projects/project1/musik-db/node_modules):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%= cloudinary_js_config %>
+    11:   </head>
+    12: 
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___3589460290191208563_70230185222720'
+Started GET "/login" for ::1 at 2020-01-15 12:36:52 +1100
+Processing by SessionController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tone.js' with type 'application/javascript'
+Checked in these paths: 
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/config
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/images
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/javascripts
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/stylesheets
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/html
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/actionview-5.2.4.1/lib/assets/compiled
+  /Users/harrypatrick/sei/projects/project1/musik-db/node_modules):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%= cloudinary_js_config %>
+    11:   </head>
+    12: 
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___3589460290191208563_70230228339180'
+Started GET "/login" for ::1 at 2020-01-15 12:37:52 +1100
+Processing by SessionController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tone.js' with type 'application/javascript'
+Checked in these paths: 
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/config
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/images
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/javascripts
+  /Users/harrypatrick/sei/projects/project1/musik-db/app/assets/stylesheets
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/html
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/cloudinary-1.13.1/vendor/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/actionview-5.2.4.1/lib/assets/compiled
+  /Users/harrypatrick/sei/projects/project1/musik-db/node_modules):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%= javascript_include_tag 'tone' %>
+    11:     <%= javascript_include_tag 'zpiano' %>
+    12: 
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___3589460290191208563_70230204996020'
+Started GET "/login" for ::1 at 2020-01-15 12:38:26 +1100
+Processing by SessionController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 233ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( zpiano.js )` to `config/initializers/assets.rb` and restart your server):
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%= javascript_include_tag 'tone' %>
+    11:     <%= javascript_include_tag 'zpiano' %>
+    12: 
+    13:     <%= cloudinary_js_config %>
+    14:   </head>
+  
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___3589460290191208563_70230236040800'
+Started GET "/login" for ::1 at 2020-01-15 12:38:36 +1100
+Processing by SessionController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 49ms (Views: 44.8ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/login" for ::1 at 2020-01-15 12:38:38 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IJpt92YFvDERWC7FCA/fMQj4/N4JNKCfMYmj2Kj/LgUqNbvWixTrqPB9kJdXhpDM/ek8JZWFnfKvnE4owRPjYA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for ::1 at 2020-01-15 12:38:38 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-01-15 12:38:48 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oJ5p2kk+k/EFFsPXzvIsDdvDGzA2FosnQsfE/nMLKCWqMb/7pC/EaOQzfYWRe2PwLtLby6qntkrc0ikOGuflQA==", "email"=>"harry@hotmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "harry@hotmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:8
+Redirected to http://localhost:3000/users/61
+Completed 302 Found in 227ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/61" for ::1 at 2020-01-15 12:38:48 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"61"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."user_id" = $1[0m  [["user_id", 61]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 29ms (Views: 24.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres/156" for ::1 at 2020-01-15 12:38:54 +1100
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"156"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:32
+  Rendering genres/show.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."genre_id" = $1[0m  [["genre_id", 156]]
+  ↳ app/views/genres/show.html.erb:12
+  Rendered genres/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 34ms (Views: 26.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/songs/314" for ::1 at 2020-01-15 12:38:55 +1100
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"314"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:28
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 23.7ms | ActiveRecord: 0.7ms)
+
+
