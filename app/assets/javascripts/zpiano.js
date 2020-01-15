@@ -1,7 +1,7 @@
 // creates new synth call synth
-const synthDefault = new Tone.Synth().toMaster();
-const synthDuo = new Tone.DuoSynth ().toMaster();
-const synthMetal = new Tone.MetalSynth ().toMaster();
+let synthDefault = new Tone.Synth().toMaster();
+let synthDuo = new Tone.DuoSynth ().toMaster();
+let synthMetal = new Tone.MetalSynth ().toMaster();
 
 window.addEventListener('keydown', onkeydown)
 window.addEventListener('keydown', highlightPianoKey)
