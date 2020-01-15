@@ -6,7 +6,7 @@
   <ul class="genre_index_ul">
     <% @user.genres.each do |g| %>
       <li class="genre_index_li">
-        <%= link_to image_tag(g.image, class: "genre-image"), genre_path(g.id) %>
+        <%= link_to cl_image_tag(g.image, class: "genre-image"), genre_path(g.id) %>
       </li>
     <% end %>
       <li class="genre_index_li">
