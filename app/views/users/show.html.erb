@@ -1,4 +1,4 @@
-<div class="greeting">
+<div class="user-greeting">
   <h1>Welcome <%= @user.name %>!</h1>
   <h3>Here are you favourite genres</h3>
 </div>
@@ -6,6 +6,7 @@
   <ul class="genre_index_ul">
     <% @user.genres.each do |g| %>
       <li class="genre_index_li">
+        <!-- <h3 class="genre-background-heading"><%= g.name %></h3> -->
         <%= link_to cl_image_tag(g.image, class: "genre-image"), genre_path(g.id) %>
       </li>
     <% end %>
@@ -14,3 +15,7 @@
       </li>
   </ul>
 </div>
+
+<script>
+
+</script>

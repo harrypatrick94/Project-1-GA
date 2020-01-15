@@ -33,9 +33,9 @@
      font-weight: bold;
      color: black;
 }
- ul .key:last-child {
+ /* ul .key:last-child {
      border-right: 1px solid black;
-}
+} */
  ul .black-key {
      position: absolute;
      top: -1px;
@@ -58,6 +58,9 @@
 }
 
 #press {
-  opacity: 0.5;
+
+
+  padding-bottom: 20px;
+  border-radius: 10px;
 
 }
