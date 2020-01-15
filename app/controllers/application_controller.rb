@@ -39,20 +39,15 @@ class ApplicationController < ActionController::Base
 
       if logged_in_user != path_trying_access
         redirect_to user_path(@current_user.id)
-
       end
-
-      # if @current_user.id != params[:id]
-      #   p "#{@current_user.id} #{params[:id]}"
-      #   puts "Everything All noo"
-      #   p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-      #   redirect_to user_path(@current_user.id)
-      #
-      # end
-
-
     end
 
+  end # user_match_id
+
+  def log_out_before_login
+    if @current_user.id.present?
+      redirect_to user_path(@current_user.id)
+    end
   end
 
   def check_for_user

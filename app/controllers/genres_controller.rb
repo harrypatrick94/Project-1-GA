@@ -24,7 +24,7 @@ class GenresController < ApplicationController
 
       genre.save
 
-    redirect_to user_path(@current_user.id)
+    redirect_to new_song_in_genre_path(genre.id)
   end
 
   # READ
@@ -80,5 +80,5 @@ class GenresController < ApplicationController
   def genre_params
   params.require(:genre).permit(:name, :description, :image)
   end
-  
+
 end

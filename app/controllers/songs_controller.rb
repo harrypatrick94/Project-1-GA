@@ -23,7 +23,7 @@ class SongsController < ApplicationController
         end #if
 
         song.save
-      redirect_to genre_path(last_id)
+      redirect_to user_path(@current_user.id)
     end
 
     # READ

@@ -1,4 +1,5 @@
 class SessionController < ApplicationController
+  before_action :log_out_before_login, only: [:new]
   def new
   end
 

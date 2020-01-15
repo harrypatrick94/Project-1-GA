@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   # before_action all pages are only visible when logged in except new
   before_action :check_for_user, except: [:new, :create]
   before_action :user_match_id, only: [:show]
+  before_action :log_out_before_login, only: [:new]
 
   def new
     # create new user
@@ -16,13 +17,15 @@ class UsersController < ApplicationController
       # if user created log them in automatically
       session[:user_id] = @user.id
       # direct user to personal home_page
-      redirect_to user_path(@user.id)
+      redirect_to new_genre_path(@user.id)
     else
       # flash error and appropriate Active record errors
       flash[:errors] = @user.errors.full_messages
       # back to new
       render :new
     end # if
+
+
   end # create
 
   def index
