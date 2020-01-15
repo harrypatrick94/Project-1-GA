@@ -1,5 +1,5 @@
 <div class="song-form-container">
-  <%= form_for @song do |f| %>
+  <%= form_for @song, :html => {:multipart => true}  do |f| %>
   <ul class="song-form">
     <li>
       <%= f.label :name %>
@@ -23,7 +23,7 @@
       <%= f.label :image, "Image URL" %>
     </li>
     <li>
-      <%= f.text_field :image %>
+      <%= f.cl_image_upload  :image %>
     </li>
 
     <li>
@@ -34,7 +34,7 @@
 
         <option value="<%= @genre_id %>"><%= @genre_name %></option>
 
-    
+
       </select>
     </li>
     <%= f.submit %>

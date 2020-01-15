@@ -41084,3 +41084,708 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 29ms (Views: 21.6ms | ActiveRecord: 1.3ms)
 
 
+Started GET "/genres/157" for ::1 at 2020-01-15 10:57:00 +1100
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"157"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 157], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:32
+  Rendering genres/show.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."genre_id" = $1[0m  [["genre_id", 157]]
+  ↳ app/views/genres/show.html.erb:12
+  Rendered genres/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 27ms (Views: 21.3ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/genres/157" for ::1 at 2020-01-15 10:57:01 +1100
+Processing by GenresController#destroy as HTML
+  Parameters: {"authenticity_token"=>"i+rGyMrpT7/7F4KOEaS4Ifw3wX3eatiq8dlbKNgxl4qBRRDpJ/gYJhoyPNxOLffcCSYBhkLb5cdvzLbYsd1a7w==", "id"=>"157"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 157], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:56
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/genres_controller.rb:56
+  [1m[36mGenre Destroy (0.3ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 157]]
+  ↳ app/controllers/genres_controller.rb:56
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/genres_controller.rb:56
+Redirected to http://localhost:3000/users/61
+Completed 302 Found in 8ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users/61" for ::1 at 2020-01-15 10:57:01 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"61"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."user_id" = $1[0m  [["user_id", 61]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 30ms (Views: 24.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/genres/new.61" for ::1 at 2020-01-15 10:57:04 +1100
+Processing by GenresController#new as 
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/_form.html.erb (2.0ms)
+  Rendered genres/new.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 118ms (Views: 79.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/genres" for ::1 at 2020-01-15 10:57:11 +1100
+Processing by GenresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cCfxN2FXBKaQfsbMSSrptlW11xsilitKp6rTK0/844h6iCcWjEZTP3FbeJ4Wo6ZLoKQX4L4nFic5vz7bJhAu7Q==", "genre"=>{"name"=>"Punk", "description"=>"es", "image"=>"https://artist1.jango.com/698/6986b47fcb812c027079214b19a960ab.jpg"}, "commit"=>"Create Genre"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/genres_controller.rb:15
+  [1m[36mGenre Create (1.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "description", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Punk"], ["description", "es"], ["created_at", "2020-01-14 23:57:11.575379"], ["updated_at", "2020-01-14 23:57:11.575379"], ["image", "https://artist1.jango.com/698/6986b47fcb812c027079214b19a960ab.jpg"]]
+  ↳ app/controllers/genres_controller.rb:15
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/genres_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/genres_controller.rb:16
+  [1m[36mGenre Update (0.4ms)[0m  [1m[33mUPDATE "genres" SET "updated_at" = $1, "user_id" = $2 WHERE "genres"."id" = $3[0m  [["updated_at", "2020-01-14 23:57:11.580127"], ["user_id", 61], ["id", 158]]
+  ↳ app/controllers/genres_controller.rb:16
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/genres_controller.rb:16
+Redirected to http://localhost:3000/users/61
+Completed 302 Found in 16ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/users/61" for ::1 at 2020-01-15 10:57:11 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"61"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."user_id" = $1[0m  [["user_id", 61]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 27ms (Views: 22.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/genres/158" for ::1 at 2020-01-15 10:57:13 +1100
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"158"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 158], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:32
+  Rendering genres/show.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."genre_id" = $1[0m  [["genre_id", 158]]
+  ↳ app/views/genres/show.html.erb:12
+  Rendered genres/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 33ms (Views: 24.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/genres/158/songs/new" for ::1 at 2020-01-15 10:57:13 +1100
+Processing by SongsController#new as HTML
+  Parameters: {"genre_id"=>"158"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 158], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:9
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (3.4ms)
+  Rendered songs/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 36ms (Views: 28.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/songs" for ::1 at 2020-01-15 10:57:20 +1100
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HOCzbEzvO5xy0doeGw+FO/wAJyFaZzezlSaqB/8QRocWT2VNof5sBZP0ZExEhsrGCRHn2sbWCt4LM0f3lvyL4g==", "song"=>{"name"=>"Highway to Hell", "artist"=>"Rolling Stones", "sheet"=>"aswert", "image"=>"https://images.recordsale.de/600/600/the-rolling-stones_brown-sugar_11.jpg", "genre_id"=>"158"}, "commit"=>"Create Song"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:15
+  [1m[36mSong Create (1.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "sheet", "created_at", "updated_at", "genre_id", "image") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Highway to Hell"], ["artist", "Rolling Stones"], ["sheet", "aswert"], ["created_at", "2020-01-14 23:57:20.599836"], ["updated_at", "2020-01-14 23:57:20.599836"], ["genre_id", 158], ["image", "https://images.recordsale.de/600/600/the-rolling-stones_brown-sugar_11.jpg"]]
+  ↳ app/controllers/songs_controller.rb:15
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:15
+  [1m[36mSong Load (1.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" ORDER BY "songs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:16
+Redirected to http://localhost:3000/genres/158
+Completed 302 Found in 14ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/genres/158" for ::1 at 2020-01-15 10:57:20 +1100
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"158"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 158], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:32
+  Rendering genres/show.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."genre_id" = $1[0m  [["genre_id", 158]]
+  ↳ app/views/genres/show.html.erb:12
+  Rendered genres/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 34ms (Views: 25.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/genres/158/songs/new" for ::1 at 2020-01-15 10:57:22 +1100
+Processing by SongsController#new as HTML
+  Parameters: {"genre_id"=>"158"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 158], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:9
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (2.3ms)
+  Rendered songs/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 35ms (Views: 27.7ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/songs" for ::1 at 2020-01-15 10:57:37 +1100
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HwDjXOPpSzp0O5NyOh0rL5NqkJXUnxmfR/jL0i8Dk7kVrzV9Dvgco5UeLSBllGTSZntQbkguJPLZ7SYiRu9e3A==", "song"=>{"name"=>"Baba O'Riley", "artist"=>"qwe", "sheet"=>"qwert", "image"=>"https://images-na.ssl-images-amazon.com/images/I/51LMgSKamUL._SY355_.jpg", "genre_id"=>"158"}, "commit"=>"Create Song"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:15
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "sheet", "created_at", "updated_at", "genre_id", "image") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Baba O'Riley"], ["artist", "qwe"], ["sheet", "qwert"], ["created_at", "2020-01-14 23:57:37.373454"], ["updated_at", "2020-01-14 23:57:37.373454"], ["genre_id", 158], ["image", "https://images-na.ssl-images-amazon.com/images/I/51LMgSKamUL._SY355_.jpg"]]
+  ↳ app/controllers/songs_controller.rb:15
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:15
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" ORDER BY "songs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:16
+Redirected to http://localhost:3000/genres/158
+Completed 302 Found in 11ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/genres/158" for ::1 at 2020-01-15 10:57:37 +1100
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"158"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 158], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:32
+  Rendering genres/show.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."genre_id" = $1[0m  [["genre_id", 158]]
+  ↳ app/views/genres/show.html.erb:12
+  Rendered genres/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 30ms (Views: 23.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/songs/318" for ::1 at 2020-01-15 10:57:39 +1100
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"318"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 318], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:28
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 158], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 318], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 21.9ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/songs/318" for ::1 at 2020-01-15 10:57:41 +1100
+Processing by SongsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wA3HeY7CoRnOjcb/mgTQfd5t2r4+41cYA48PLoG22frKohFYY9P2gC+oeK3FjZ+AK3waRaJSanWdmuLe6FoUnw==", "id"=>"318"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 318], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:59
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 318], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:62
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:62
+  [1m[36mSong Destroy (0.3ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 318]]
+  ↳ app/controllers/songs_controller.rb:62
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:62
+Redirected to http://localhost:3000/genres/158
+Completed 302 Found in 12ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/genres/158" for ::1 at 2020-01-15 10:57:41 +1100
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"158"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 158], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:32
+  Rendering genres/show.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."genre_id" = $1[0m  [["genre_id", 158]]
+  ↳ app/views/genres/show.html.erb:12
+  Rendered genres/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 29ms (Views: 21.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/songs/317" for ::1 at 2020-01-15 10:57:44 +1100
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"317"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (1.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 317], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:28
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 158], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 317], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 32ms (Views: 21.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/songs/317/edit" for ::1 at 2020-01-15 10:57:45 +1100
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"317"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 317], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:40
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 158], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:42
+  Rendering songs/edit.html.erb within layouts/application
+  Rendered songs/_form.html.erb (3.2ms)
+  Rendered songs/edit.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 39ms (Views: 28.5ms | ActiveRecord: 1.7ms)
+
+
+Started PATCH "/songs/317" for ::1 at 2020-01-15 10:57:51 +1100
+Processing by SongsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9QVIWlFxyCqADqzBMlBHJKUPS7XoxX5TRjP2OfobXvj/qp57vGCfs2ErEpNt2QjZUB6LTnR0Qz7YJhvJk/eTnQ==", "song"=>{"name"=>"Highway to Hell", "artist"=>"Rolling Stones", "sheet"=>"Shheeeettt", "image"=>"https://images.recordsale.de/600/600/the-rolling-stones_brown-sugar_11.jpg", "genre_id"=>"158"}, "commit"=>"Update Song", "id"=>"317"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 317], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:49
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:52
+  [1m[36mSong Update (1.4ms)[0m  [1m[33mUPDATE "songs" SET "sheet" = $1, "updated_at" = $2 WHERE "songs"."id" = $3[0m  [["sheet", "Shheeeettt"], ["updated_at", "2020-01-14 23:57:51.916797"], ["id", 317]]
+  ↳ app/controllers/songs_controller.rb:52
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:52
+Redirected to http://localhost:3000/songs/317
+Completed 302 Found in 13ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/songs/317" for ::1 at 2020-01-15 10:57:51 +1100
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"317"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 317], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:28
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 158], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 317], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 21.5ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/login" for ::1 at 2020-01-15 11:00:08 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oBPc8vzKkGZxnJ4kIWF4kT4uJQHhmH8cnht6hIeSV6+qvArTEdvH/5C5IHZ+6Ddsyz/l+n0pQnEADpd07n6ayg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for ::1 at 2020-01-15 11:00:08 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-01-15 11:00:56 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 113ms (Views: 109.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-01-15 11:01:02 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rh8PLIVwjrMkk/Zf1g+zVA/TwGLnl/SjTCQB4ZvkgTJMsNkNaGHZKsW2SA2Jhvyp+sIAmXsmyc7SMewR8ghMVw==", "email"=>"harry@hotmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "harry@hotmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:8
+Redirected to http://localhost:3000/users/61
+Completed 302 Found in 219ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/61" for ::1 at 2020-01-15 11:01:02 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"61"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."user_id" = $1[0m  [["user_id", 61]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 25ms (Views: 21.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/genres/156" for ::1 at 2020-01-15 11:01:03 +1100
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"156"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:32
+  Rendering genres/show.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."genre_id" = $1[0m  [["genre_id", 156]]
+  ↳ app/views/genres/show.html.erb:12
+  Rendered genres/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 27ms (Views: 21.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/songs/314" for ::1 at 2020-01-15 11:01:04 +1100
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"314"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:28
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 28ms (Views: 20.5ms | ActiveRecord: 1.2ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Tone.js.map"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.1) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.1) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.0) lib/rack/method_override.rb:24:in `call'
+rack (2.1.0) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.0) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/songs/314" for ::1 at 2020-01-15 11:02:11 +1100
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"314"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:28
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 36ms (Views: 28.5ms | ActiveRecord: 1.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Tone.js.map"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.1) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.1) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.0) lib/rack/method_override.rb:24:in `call'
+rack (2.1.0) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.0) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/songs/314" for ::1 at 2020-01-15 11:04:56 +1100
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"314"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:28
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 204ms (Views: 119.7ms | ActiveRecord: 20.2ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Tone.js.map"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.1) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.1) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.0) lib/rack/method_override.rb:24:in `call'
+rack (2.1.0) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.0) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/songs/314" for ::1 at 2020-01-15 11:05:02 +1100
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"314"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:28
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 22.6ms | ActiveRecord: 1.3ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Tone.js.map"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.1) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.1) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.0) lib/rack/method_override.rb:24:in `call'
+rack (2.1.0) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.0) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/61" for ::1 at 2020-01-15 11:25:04 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"61"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."user_id" = $1[0m  [["user_id", 61]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 378ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `cloudinary_js_config' for #<#<Class:0x007ff1d6e3d968>:0x007ff1d6e37400>):
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%= cloudinary_js_config %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1567481064913871539_70338334517920'
+Started GET "/songs/314/edit" for ::1 at 2020-01-15 11:25:27 +1100
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"314"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:40
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:42
+  Rendering songs/edit.html.erb within layouts/application
+  Rendered songs/_form.html.erb (70.6ms)
+  Rendered songs/edit.html.erb within layouts/application (74.3ms)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `cl_image_upload' for #<ActionView::Helpers::FormBuilder:0x007ff1d6e5ef28>):
+    23:       <%= f.label :image, "Image URL" %>
+    24:     </li>
+    25:     <li>
+    26:       <%= f.cl_image_upload  :image %>
+    27:     </li>
+    28: 
+    29:     <li>
+  
+app/views/songs/_form.html.erb:26:in `block in _app_views_songs__form_html_erb__4210690431905876592_70338334679320'
+app/views/songs/_form.html.erb:2:in `_app_views_songs__form_html_erb__4210690431905876592_70338334679320'
+app/views/songs/edit.html.erb:5:in `_app_views_songs_edit_html_erb__1800174888595299937_70338334816800'
+Started GET "/songs/314/edit" for ::1 at 2020-01-15 11:26:40 +1100
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"314"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:40
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:42
+  Rendering songs/edit.html.erb within layouts/application
+  Rendered songs/_form.html.erb (68.6ms)
+  Rendered songs/edit.html.erb within layouts/application (71.1ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `cl_image_upload' for #<ActionView::Helpers::FormBuilder:0x007ff1d8080238>):
+    23:       <%= f.label :image, "Image URL" %>
+    24:     </li>
+    25:     <li>
+    26:       <%= f.cl_image_upload  :image %>
+    27:     </li>
+    28: 
+    29:     <li>
+  
+app/views/songs/_form.html.erb:26:in `block in _app_views_songs__form_html_erb__4210690431905876592_70338333992480'
+app/views/songs/_form.html.erb:2:in `_app_views_songs__form_html_erb__4210690431905876592_70338333992480'
+app/views/songs/edit.html.erb:5:in `_app_views_songs_edit_html_erb__1800174888595299937_70338334030860'
+Started GET "/songs/314/edit" for ::1 at 2020-01-15 11:26:48 +1100
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"314"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:40
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:42
+  Rendering songs/edit.html.erb within layouts/application
+  Rendered songs/_form.html.erb (68.2ms)
+  Rendered songs/edit.html.erb within layouts/application (70.9ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `cl_image_upload' for #<ActionView::Helpers::FormBuilder:0x007ff1d74bb790>):
+    23:       <%= f.label :image, "Image URL" %>
+    24:     </li>
+    25:     <li>
+    26:       <%= f.cl_image_upload  :image %>
+    27:     </li>
+    28: 
+    29:     <li>
+  
+app/views/songs/_form.html.erb:26:in `block in _app_views_songs__form_html_erb__4210690431905876592_70338337987100'
+app/views/songs/_form.html.erb:2:in `_app_views_songs__form_html_erb__4210690431905876592_70338337987100'
+app/views/songs/edit.html.erb:5:in `_app_views_songs_edit_html_erb__1800174888595299937_70338338048260'
+Started DELETE "/login" for ::1 at 2020-01-15 11:26:51 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HwdO7svPR+qIlb7EXhtNJiuhuqsrbKWRAe4f0mnmWREVqJjPJt4Qc2mwAJYBkgLb3rB6ULfdmPyf+/IiAAqUdA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for ::1 at 2020-01-15 11:26:51 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 235ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `cloudinary_js_config' for #<#<Class:0x007ff1d6bc8ed0>:0x007ff1d6bc2fa8>):
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%= cloudinary_js_config %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1567481064913871539_70338333235340'

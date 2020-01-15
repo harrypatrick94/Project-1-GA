@@ -1,5 +1,5 @@
 <div class="genre-form-container">
-  <%= form_for @genre do |f| %>
+  <%= form_for @genre, :html => {:multipart => true} do |f| %>
   <ul class="genre-form">
     <li>
       <%= f.label :name %>
@@ -17,7 +17,7 @@
       <%= f.label :image %>
     </li>
     <li>
-      <%= f.text_field :image %>
+      <%= f.cl_image_upload :image %>
     </li>
     <li>
       <%= f.submit %>
