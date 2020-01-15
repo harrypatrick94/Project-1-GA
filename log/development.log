@@ -41947,3 +41947,130 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 72ms (Views: 60.7ms | ActiveRecord: 5.7ms)
 
 
+Started GET "/genres/156" for ::1 at 2020-01-15 11:57:04 +1100
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"156"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:32
+  Rendering genres/show.html.erb within layouts/application
+  [1m[36mSong Load (1.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."genre_id" = $1[0m  [["genre_id", 156]]
+  ↳ app/views/genres/show.html.erb:12
+  Rendered genres/show.html.erb within layouts/application (28.4ms)
+Completed 500 Internal Server Error in 120ms (ActiveRecord: 13.5ms)
+
+
+  
+ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( tone.js )` to `config/initializers/assets.rb` and restart your server):
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%= javascript_include_tag 'tone' %>
+    11:     <%= cloudinary_js_config %>
+    12:   </head>
+    13: 
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__358686116584985406_70143964738940'
+Started GET "/login" for ::1 at 2020-01-15 11:57:26 +1100
+Processing by SessionController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( tone.js )` to `config/initializers/assets.rb` and restart your server):
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:     <%= javascript_include_tag 'tone' %>
+    11:     <%= cloudinary_js_config %>
+    12:   </head>
+    13: 
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__358686116584985406_70143960733620'
+Started GET "/login" for ::1 at 2020-01-15 11:58:56 +1100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/harrypatrick/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by SessionController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 403ms (Views: 371.1ms | ActiveRecord: 7.6ms)
+
+
+Started DELETE "/login" for ::1 at 2020-01-15 11:59:00 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zG7RiWhxD4aSzUwqLGfdqLbMEeZH96y2UMk2u6/ZctPGwQeohWBYH3Po8nhz7pJVQ93RHdtGkdvO3NtLxjW/tg=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Redirected to http://localhost:3000/login
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for ::1 at 2020-01-15 11:59:00 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-01-15 11:59:05 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ko9GNdE2UAt3hu1iAuECxLnAAd3DZ6I+JicSn9FO25KYIJAUPCcHkpajUzBdaE05TNHBJl/Wn1O4Mv9vuKIW9w==", "email"=>"harry@hotmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "harry@hotmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:8
+Redirected to http://localhost:3000/users/61
+Completed 302 Found in 222ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/61" for ::1 at 2020-01-15 11:59:05 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"61"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."user_id" = $1[0m  [["user_id", 61]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (76.6ms)
+Completed 200 OK in 114ms (Views: 102.5ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/genres/156" for ::1 at 2020-01-15 11:59:06 +1100
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"156"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:32
+  Rendering genres/show.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."genre_id" = $1[0m  [["genre_id", 156]]
+  ↳ app/views/genres/show.html.erb:12
+  Rendered genres/show.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 46ms (Views: 35.0ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/songs/314" for ::1 at 2020-01-15 11:59:08 +1100
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"314"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:28
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 314], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 39ms (Views: 30.7ms | ActiveRecord: 1.4ms)
+
+
