@@ -14,6 +14,15 @@ class GenresController < ApplicationController
 
     genre = Genre.create genre_params
     @current_user.genres << genre
+    if params[:file].present?
+      # go to cloudinary ask for the image file
+      req = Cloudinary::Uploader.upload(params[:file])
+      # query to cloudinary from public id (image id in cloudinary)
+      genre.image = req["public_id"]
+
+      end #if
+
+      genre.save
 
     redirect_to user_path(@current_user.id)
   end
@@ -48,6 +57,15 @@ class GenresController < ApplicationController
     # raise 'hell'
     genre = @current_user.genres.find params[:id]
     genre.update genre_params
+    if params[:file].present?
+      # go to cloudinary ask for the image file
+      req = Cloudinary::Uploader.upload(params[:file])
+      # query to cloudinary from public id (image id in cloudinary)
+      genre.image = req["public_id"]
+
+      end #if
+
+      genre.save
 
     redirect_to genre_path(genre.id)
   end

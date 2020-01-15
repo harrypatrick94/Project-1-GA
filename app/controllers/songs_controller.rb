@@ -12,9 +12,17 @@ class SongsController < ApplicationController
     end
     # 2. create
     def create
-      Song.create song_params
+      song = Song.create song_params
       last_id = Song.last.genre_id
+      if params[:file].present?
+        # go to cloudinary ask for the image file
+        req = Cloudinary::Uploader.upload(params[:file])
+        # query to cloudinary from public id (image id in cloudinary)
+        song.image = req["public_id"]
 
+        end #if
+
+        song.save
       redirect_to genre_path(last_id)
     end
 
@@ -50,6 +58,15 @@ class SongsController < ApplicationController
       # edit genre
       genre_id = song.genre_id
       song.update song_params
+      if params[:file].present?
+        # go to cloudinary ask for the image file
+        req = Cloudinary::Uploader.upload(params[:file])
+        # query to cloudinary from public id (image id in cloudinary)
+        song.image = req["public_id"]
+
+        end #if
+
+        song.save
 
       redirect_to song_path(song.id)
     end
