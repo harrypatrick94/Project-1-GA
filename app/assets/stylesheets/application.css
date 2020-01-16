@@ -160,6 +160,8 @@ nav.new-account, nav.login-link, a.logout-path {
   text-shadow: 3px 3px black;
 }
 
+
+
 .song-info-container {
   display: flex;
   justify-content: center;
@@ -188,4 +190,8 @@ nav.new-account, nav.login-link, a.logout-path {
 
 .log-out {
   text-shadow: 2px 2px black;
+}
+
+.video-piano {
+  display: inline-block;
 }

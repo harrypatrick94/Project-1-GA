@@ -12,6 +12,15 @@ class UsersController < ApplicationController
   def create
     # create user and save to instance varible
     @user = User.create user_params
+
+    if params[:file].present?
+      # go to cloudinary ask for the image file
+      req = Cloudinary::Uploader.upload(params[:file])
+      # query to cloudinary from public id (image id in cloudinary)
+      user.image = req["public_id"]
+      user.save
+    end #if
+
     # check to see if account created successfully
     if @user.persisted?
       # if user created log them in automatically
@@ -53,10 +62,8 @@ class UsersController < ApplicationController
       req = Cloudinary::Uploader.upload(params[:file])
       # query to cloudinary from public id (image id in cloudinary)
       user.image = req["public_id"]
-
-      end #if
-
       user.save
+    end #if
 
     redirect_to user_path(user.id)
   end # update

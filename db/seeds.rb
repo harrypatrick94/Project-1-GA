@@ -19,7 +19,7 @@ puts "Created #{Genre.count} genres."
 
 Song.destroy_all
 
-take_five = Song.create! name: "Take Five", artist: "Dave Brubeck", sheet: "Take Five sheet", image: "https://res.cloudinary.com/dm0vmiksn/image/upload/v1579133701/project1-ga/take-5-musik-db_dnu3kg.jpg"
+take_five = Song.create! name: "Take Five", artist: "Dave Brubeck", sheet: "https://www.youtube.com/watch?v=vmDDOFXSgAs", image: "https://res.cloudinary.com/dm0vmiksn/image/upload/v1579133701/project1-ga/take-5-musik-db_dnu3kg.jpg"
 at_last = Song.create! name: "At Last", artist: "Miles Davis", sheet: "At last sheet", image: "https://res.cloudinary.com/dm0vmiksn/image/upload/v1579133646/project1-ga/atlast-musik-db_glsslm.jpg"
 how_blues = Song.create! name: "How Blues Can You Get", artist: "BB King", sheet: "How blues sheet", image: "https://res.cloudinary.com/dm0vmiksn/image/upload/v1579133667/project1-ga/howblue-musik-db_ujdj5a.jpg"
 johnny_b = Song.create! name: "Johnny B Goode", artist: "Chuck Berry", sheet: "B Goode sheet", image: "https://res.cloudinary.com/dm0vmiksn/image/upload/v1579133673/project1-ga/johnnBgoode-musik-db_vouzwc.jpg"
