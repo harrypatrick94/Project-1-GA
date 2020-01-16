@@ -1,8 +1,8 @@
 User.destroy_all
 
-harry = User.create! name: "Harry", email: "harry@hotmail.com", image: "Picture:here", bio: "Haz", password: "chicken"
+harry = User.create! name: "Harry", email: "harry@hotmail.com", image: "https://res.cloudinary.com/dm0vmiksn/image/upload/v1579139608/project1-ga/harry-dp_lg7png.jpg", bio: "Haz", password: "chicken"
 puts
-jake = User.create! name: "Jake", email: "jake@hotmail.com", image: "Picture:here", bio: "Pigeon", password: "chicken"
+jake = User.create! name: "Jake", email: "jake@hotmail.com", image: "https://res.cloudinary.com/dm0vmiksn/image/upload/v1579139612/project1-ga/jake-dp_qad7r8.jpg", bio: "Pigeon", password: "chicken"
 
 puts "You created #{User.count} users"
 

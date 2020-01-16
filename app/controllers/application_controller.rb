@@ -35,10 +35,10 @@ class ApplicationController < ActionController::Base
 
   end # user_match_id
 
-  def check_for_no_user
-    login = false
-
-  end
+  # def check_for_no_user
+  #   login = false
+  #
+  # end
 
   def check_for_user
     # Show pages can only be seen by logged in user

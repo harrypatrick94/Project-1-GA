@@ -1,6 +1,11 @@
 class SessionController < ApplicationController
-  before_action :log_out_before_login, only: [:new]
+  # before_action :log_out_before_login, only: [:new]
   def new
+    if @current_user.present?
+      redirect_to user_path(@current_user.id)
+      else
+        p "yay"
+    end
   end
 
   def create

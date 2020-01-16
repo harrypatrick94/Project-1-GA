@@ -1,3 +1,8 @@
+<div class="useer-image-container">
+  <div class="user-image">
+    <%= cl_image_tag(@user.image) %>
+  </div>
+</div>
 <div class="user-greeting">
   <h1>Welcome <%= @user.name %>!</h1>
   <h3>Here are you favourite genres</h3>
@@ -15,7 +20,10 @@
       </li>
   </ul>
 </div>
-
+<footer class="user-nav">
+  <ul class="user-nav-ul">
+    <li class="user-nav-li"><nav><strong><%= link_to "Edit #{@user.name}", edit_user_path(@user.id) %></strong></nav></li>
+</footer>
 <script>
 
 </script>

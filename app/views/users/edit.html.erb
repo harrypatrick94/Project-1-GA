@@ -1,0 +1,10 @@
+<div class="useer-image-container">
+  <div class="user-image">
+    <%= cl_image_tag(@user.image) %>
+  </div>
+</div>
+  <%= render partial: 'form' %>
+  <footer class="user-nav">
+    <ul class="user-nav-ul">
+      <li class="user-nav-li"><nav><strong><%= link_to "Back to Genres", user_path(@user.id) %></strong></nav></li>
+  </footer>

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # before_action all pages are only visible when logged in except new
   before_action :check_for_user, except: [:new, :create]
   before_action :user_match_id, only: [:show]
-  before_action :log_out_before_login, only: [:new]
+  # before_action :log_out_before_login, only: [:new]
 
   def new
     # create new user
@@ -37,6 +37,29 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
 
   end #show
+
+  def edit
+    @user = User.find params[:id]
+  end # end
+
+  def update
+    # find the songs to be edited
+    user = User.find params[:id]
+    # edit genre
+
+    user.update user_params
+    if params[:file].present?
+      # go to cloudinary ask for the image file
+      req = Cloudinary::Uploader.upload(params[:file])
+      # query to cloudinary from public id (image id in cloudinary)
+      user.image = req["public_id"]
+
+      end #if
+
+      user.save
+
+    redirect_to user_path(user.id)
+  end # update
 
   def destroy
     @user = User.find params[:id]
