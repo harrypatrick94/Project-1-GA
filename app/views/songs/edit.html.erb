@@ -1,3 +1,8 @@
+<div class="user-image-container">
+  <div class="user-image">
+    <%= link_to cl_image_tag(@current_user.image), user_path(@current_user.id) %>
+  </div>
+</div>
 <p>
   Edit <%= @song.name  %>
 </p>

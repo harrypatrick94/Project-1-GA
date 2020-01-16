@@ -1,6 +1,6 @@
-<div class="useer-image-container">
+<div class="user-image-container">
   <div class="user-image">
-    <%= cl_image_tag(@user.image) %>
+    <%= link_to cl_image_tag(@user.image), user_path(@user.id) %>
   </div>
 </div>
 <div class="user-greeting">

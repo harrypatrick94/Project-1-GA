@@ -176,8 +176,16 @@ nav.new-account, nav.login-link, a.logout-path {
 .user-image {
   display: flex;
   justify-content: flex-end;
-  margin: 0 15px;
-  
-  height: 60px;
-  border-radius: 15px;
+  margin: 0 25px;
+
+}
+
+.user-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.log-out {
+  text-shadow: 2px 2px black;
 }
