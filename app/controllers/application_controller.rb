@@ -19,15 +19,6 @@ class ApplicationController < ActionController::Base
      # raise "hell"
   end # fetch_user
 
-  # def user_match_id
-  #   @check_current_user = User.find_by id: session[:user_id]
-  #   if @check_current_user.id == session[:user_id]
-  #
-  #   else
-  #     redirect_to user_path(@check_current_user.id)
-  #   end # if
-  # end # user_match_id
-
   def user_match_id
 
     # check to see current user id is equal to the id of who's logged in
@@ -44,10 +35,9 @@ class ApplicationController < ActionController::Base
 
   end # user_match_id
 
-  def log_out_before_login
-    if @current_user.id.present?
-      redirect_to user_path(@current_user.id)
-    end
+  def check_for_no_user
+    login = false
+
   end
 
   def check_for_user
