@@ -15,7 +15,7 @@
         <%= link_to cl_image_tag(g.image, class: "genre-image"), genre_path(g.id) %>
       </li>
     <% end %>
-      <li class="genre_index_li">
+      <li class="genre_index_li" id="genre-add-button">
         <%= link_to link_to image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwIbo8BO9d1bIMbyelghTD1oiPlMNmZ6e4iXDqQ5LxPGkT7lw8&s", class: "genre-image"), new_genre_path(@user.id) %>
       </li>
   </ul>

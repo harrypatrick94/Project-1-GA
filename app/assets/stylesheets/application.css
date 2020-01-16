@@ -195,3 +195,11 @@ nav.new-account, nav.login-link, a.logout-path {
 .video-piano {
   display: inline-block;
 }
+
+#genre-add-button, #song-add-button {
+  opacity: 0.6;
+}
+
+#genre-add-button:hover, #song-add-button:hover {
+  opacity: 0.3;
+}

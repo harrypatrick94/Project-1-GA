@@ -8,8 +8,6 @@
     <h1><%= @song.name %></h1>
 
     <h2><%= @song.artist %></h2>
-
-
   </div>
 </div>
       <div id="SongsController">
@@ -64,4 +62,9 @@
     <li class="song-nav-li"><strong><nav><%= link_to 'Delete Song', song_path( @song.id), method: 'delete'%></nav></strong></li>
   </ul>
 </div>
+<div class="video">
+  <%= @song.sheet %>
+
+</div>
+
   <%= javascript_include_tag 'zpiano' %>
