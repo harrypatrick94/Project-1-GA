@@ -58,6 +58,5 @@ tv = Artist.create! name: "Tunnel Vision"
 puts "Created #{Artist.count} artists, Last one called #{Artist.last.name}"
 
 Concert.destroy_all
-bdo = Concert.create! name: "Big Day Out"
-
-puts "Created #{Concert.count} concert, Last one called #{Concert.last.name}"
+# c1 = Concert.create name: 'Stones', address: '1 Market St, Sydney 2000, Australia'
+# c2 = Concert.create name: 'Who', address: '22 central ave, manly 2095'

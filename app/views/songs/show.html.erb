@@ -60,11 +60,9 @@
       <nav><strong><%= link_to "Back to #{@genre_name}", genre_path(@genre_id) %></strong></nav>
     </li>
     <li class="song-nav-li"><strong><nav><%= link_to 'Delete Song', song_path( @song.id), method: 'delete'%></nav></strong></li>
+    <li class="song-nav-li"><nav><strong><%= link_to "Sydney Concerts", concerts_map_path%></strong></nav></li>
   </ul>
 </div>
-<div class="video">
-  <%= @song.sheet %>
 
-</div>
 
   <%= javascript_include_tag 'zpiano' %>

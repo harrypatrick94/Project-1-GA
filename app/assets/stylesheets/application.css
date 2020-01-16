@@ -45,7 +45,7 @@ ul.genre_index_ul, ul.song_index_ul{
 
 /* welcome messages */
 
-div.user-greeting h1, div.user-greeting h3, div.genre-greeting h1, div.genre-greeting p, div.song-greeting h1, div.song-greeting h2, div.song-greeting p {
+div.user-greeting h1, div.user-greeting h3, div.genre-greeting h1, div.genre-greeting p, div.song-greeting h1, div.song-greeting h2, div.song-greeting p, div.concert-greeting {
   display: flex;
   justify-content: center;
   font-size: 25px;
@@ -175,14 +175,14 @@ nav.new-account, nav.login-link, a.logout-path {
 
 }
 
-.user-image {
+.user-image, .map-image {
   display: flex;
   justify-content: flex-end;
   margin: 0 25px;
 
 }
 
-.user-image img {
+.user-image img, .map-image img {
   width: 100px;
   height: 100px;
   border-radius: 50px;
@@ -196,6 +196,12 @@ nav.new-account, nav.login-link, a.logout-path {
   display: inline-block;
 }
 
+div.map-image-container {
+  position: relative;
+  right: 10px;
+}
+
+
 #genre-add-button, #song-add-button {
   opacity: 0.6;
 }
@@ -203,3 +209,5 @@ nav.new-account, nav.login-link, a.logout-path {
 #genre-add-button:hover, #song-add-button:hover {
   opacity: 0.3;
 }
+
+#map

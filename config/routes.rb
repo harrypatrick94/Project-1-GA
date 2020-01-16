@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'session#new'
 
+  get 'concerts/map' => 'concerts#map'
 
   get '/login' => 'session#new'
 
