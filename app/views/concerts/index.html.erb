@@ -1,0 +1,20 @@
+<div class="concert-image-container">
+  <div class="concert-image">
+    <%= link_to cl_image_tag(@current_user.image), user_path(@current_user.id) %>
+  </div>
+</div>
+<div class="concert-greeting">
+  <h1>Index of Concert</h1>
+</div>
+<div class="concert-show-container">
+  <ul class="">
+    <% @concerts.each do |c| %>
+      <li class="concert-list">
+        <%= link_to c.name, concert_path(c.id) %>
+      </li>
+    <% end %>
+      <li class="concert-list">
+        <%= link_to "Add", new_concert_path %>
+      </li>
+  </ul>
+</div>

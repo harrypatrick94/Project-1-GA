@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ # Musik Database #
 
-Things you may want to cover:
+Store your store, favourite song and even try play them with the built in synth.
 
-* Ruby version
+This project uses:
+  * Ruby
+  * Rails
+  * Javascript
+    * Tone.js
+  * css
+  * html
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can find the site here: https://ga-project1-musik-db.herokuapp.com/

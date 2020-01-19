@@ -58,5 +58,5 @@ tv = Artist.create! name: "Tunnel Vision"
 puts "Created #{Artist.count} artists, Last one called #{Artist.last.name}"
 
 Concert.destroy_all
-# c1 = Concert.create name: 'Stones', address: '1 Market St, Sydney 2000, Australia'
-# c2 = Concert.create name: 'Who', address: '22 central ave, manly 2095'
+# stones = Concert.create name: 'Stones', address: '1 Market St, Sydney 2000, Australia', time: "7pm"
+# who  = Concert.create name: 'Who', address: '22 central ave, manly 2095', time: "8pm"

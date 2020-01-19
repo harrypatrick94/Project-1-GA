@@ -28,6 +28,7 @@
     <li class="genre-nav-li"><nav><strong><%= link_to "Edit #{@genre.name}", edit_genre_path(@genre.id) %></strong></nav></li>
     <li class="genre-nav-li"><nav><strong><%= link_to "Genres Index", user_path(session[:user_id])	 %></strong></nav></li>
     <li class="genre-nav-li"><nav><strong><%= link_to "Delete Genre", genre_path(@genre.id), method: 'delete' %></strong></nav></li>
-    
+    <li class="user-nav-li"><nav><strong><%= link_to "Concerts near me", concerts_map_path %></strong></nav></li>
+
   </ul>
 </footer>

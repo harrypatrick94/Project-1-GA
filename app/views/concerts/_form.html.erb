@@ -1,0 +1,28 @@
+<div class="concert-form-container">
+  <%= form_for @concert, :html => {:multipart => true} do |f| %>
+  <ul class="concert-form">
+    <li>
+      <%= f.label :name %>
+    </li>
+    <li>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <%= f.label :address %>
+    </li>
+    <li>
+      <%= f.text_field :address %>
+    </li>
+    <li>
+      <%= f.label :time %>
+    </li>
+    <li>
+      <%= f.text_field :time %>
+    </li>
+    <li>
+      <%= f.submit %>
+    </li>
+
+  <% end %>
+  </ul>
+</div>

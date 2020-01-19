@@ -1,0 +1,44 @@
+
+<h1>Concerts near me</h1>
+
+<div class="map-image-container">
+ <div class="map-image">
+   <%= link_to cl_image_tag(@current_user.image), user_path(@current_user.id) %>
+   <%= link_to "All Concerts", concerts_path %>
+ </div>
+</div>
+<div id="map">
+
+</div>
+
+<script>
+
+  const concerts = <%= @concerts.to_json.html_safe %>
+
+  function initMap() {
+
+    var bounds = new google.maps.LatLngBounds();
+    var map = new google.maps.Map(document.getElementById('map'));
+
+    for (let i=0; i < concerts.length; i++) {
+      const concert = concerts[i];
+
+      var marker = new google.maps.Marker({
+        position: {lat: concert.latitude, lng:  concert.longitude},
+        map: map,
+        title:  concert.name,
+        address: concert.address,
+        time: concert.time
+      });
+
+      bounds.extend(marker.position);
+    }
+
+    map.fitBounds(bounds);
+  }
+
+</script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUB5kvBZjtPLVhds1s7ETFU-SC9BPT-J4&callback=initMap">
+    </script>

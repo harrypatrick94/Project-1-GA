@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
+
   root to: 'session#new'
 
-  # get 'concerts/map' => 'concerts#map'
+  get 'concerts/map' => 'concerts#map'
 
   get '/login' => 'session#new'
 
@@ -25,6 +26,6 @@ Rails.application.routes.draw do
   resources :users
   resources :genres
   resources :songs
-
+  resources :concerts
 
 end

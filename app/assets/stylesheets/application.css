@@ -19,6 +19,7 @@ body {
   background-image: url("musik-database-background.jpg");
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
+  background-attachment: fixed;
   background-size: cover;
   color: white;
   font-family: sans-serif;
@@ -30,7 +31,7 @@ ul {
 }
 
 /* Index of genres page */
-ul.genre_index_ul, ul.song_index_ul{
+ul.genre_index_ul, ul.song_index_ul, ul.concert_index_ul{
 
   padding: 0;
   margin: 0 auto;
@@ -53,7 +54,7 @@ div.user-greeting h1, div.user-greeting h3, div.genre-greeting h1, div.genre-gre
 }
 
 
-li.genre_index_li, li.song_index_li {
+li.genre_index_li, li.song_index_li, li.concert_index_ul {
   font-size: 40px;
   width: 350px;
   height: 350px;
@@ -66,7 +67,7 @@ li.genre_index_li, li.song_index_li {
 
 
 }
-li.genre_index_li a, li.song_index_li a {
+li.genre_index_li a, li.song_index_li a, li.concert_index_ul a {
   /* padding: 0 150px 368px; */
   /* width: 100%;
   height: 100%; */
@@ -76,7 +77,7 @@ a {
   color: white;
 }
 
-li.genre_index_li:hover, li.song_index_li:hover{
+li.genre_index_li:hover, li.song_index_li:hover, li.concert_index_ul {
   opacity: 0.5;
 }
 
@@ -92,14 +93,14 @@ li.genre_index_li:hover, li.song_index_li:hover{
   justify-content: center;
   margin-top: 130px;
 }
-
-.genre-form-container, .song-form-container, .user-form-container {
+/* form containers */
+.genre-form-container, .song-form-container, .user-form-container, .concert-form-container {
   display: flex;
   justify-content: center;
 }
 
 
-.login-form, .sign-up-form , .genre-form, .song-form, .user-form {
+.login-form, .sign-up-form , .genre-form, .song-form, .user-form, .concert-form, .concert-list{
   border: 4px solid white;
   border-radius: 15px;
   padding: 60px 80px;
@@ -110,7 +111,7 @@ li.genre_index_li:hover, li.song_index_li:hover{
 
 }
 
-.login-form li, .sign-up-form li, .genre-form li, .song-form li, .user-form li {
+.login-form li, .sign-up-form li, .genre-form li, .song-form li, .user-form li, .concert-form li, .concert-list li {
   margin: 3px 0;
 }
 /* Sign in page */
@@ -124,18 +125,18 @@ nav.new-account, nav.login-link, a.logout-path {
 }
 
 /* Genre page */
-.genre-nav, .song-nav, .user-nav {
+.genre-nav, .song-nav, .user-nav, .map-nav, .concert-nav {
   display: flex;
   justify-content: flex-end;
 
 
 }
-.genre-nav-ul, .song-nav-ul, .user-nav-ul {
+.genre-nav-ul, .song-nav-ul, .user-nav-ul, .map-nap-ul, .concert-nav-ul {
   position: absolute;
   bottom: 0;
 
 }
-.genre-nav li, .song-nav li, .user-nav li{
+.genre-nav li, .song-nav li, .user-nav li, .map-nav li, .concert-nav li {
   display: inline-flex;
   margin-bottom: 5px;
   margin-right: 15px;
@@ -150,7 +151,7 @@ nav.new-account, nav.login-link, a.logout-path {
   justify-content: flex-start;
   padding-left: 15px;
 }
-.new-song-container, .new-genre-container, .genre-edit-container {
+.new-song-container, .new-genre-container, .genre-edit-container, .concert-show-container {
   display: flex;
   justify-content: space-around;
 
@@ -171,18 +172,14 @@ nav.new-account, nav.login-link, a.logout-path {
   justify-content: center;
 }
 
-.user-image-container {
-
-}
-
-.user-image, .map-image {
+.user-image, .map-image, .concert-image {
   display: flex;
   justify-content: flex-end;
   margin: 0 25px;
 
 }
 
-.user-image img, .map-image img {
+.user-image img, .map-image img, .concert-image img {
   width: 100px;
   height: 100px;
   border-radius: 50px;
@@ -197,7 +194,7 @@ nav.new-account, nav.login-link, a.logout-path {
 }
 
 div.map-image-container {
-  position: relative;
+  position: fixed;
   right: 10px;
 }
 
@@ -209,3 +206,25 @@ div.map-image-container {
 #genre-add-button:hover, #song-add-button:hover {
   opacity: 0.3;
 }
+
+div.map-image {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#map {
+  height: 70%;
+  width: 50%;
+  margin: 20px;
+}
+
+html, body {
+     height: 100%;
+     margin: 0;
+     padding: 0;
+   }
+
+
+/* Links inside the navbar */

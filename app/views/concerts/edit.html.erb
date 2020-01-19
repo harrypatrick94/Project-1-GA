@@ -1,0 +1,20 @@
+<div class="concert-image-container">
+  <div class="concert-image">
+    <%= link_to cl_image_tag(@current_user.image), user_path(@current_user.id) %>
+  </div>
+</div>
+<div class="concert-greeting">
+  <h1>Edit <%= @concert.name %></h1>
+</div>
+<%= render partial: 'form' %>
+<div class="concert-nav">
+  <ul class="concert-nav-ul">
+    <li class="concert-nav-li"><nav><strong><%= link_to "Edit #{@concert.name}", edit_concert_path(@concert.id) %></strong></nav></li>
+    <li class="concert-nav-li"><nav><strong>
+    <li>
+      <nav><strong><%= link_to "Back to Concert Index", concerts_path %></strong></nav>
+    </li>
+    <li class="concert-nav-li"><strong><nav><%= link_to 'Delete Concert', concert_path( @concert.id), method: 'delete'%></nav></strong></li>
+    <li class="concert-nav-li"><nav><strong><%= link_to "Concerts near me", concerts_map_path %></strong></nav></li>
+  </ul>
+</div>
