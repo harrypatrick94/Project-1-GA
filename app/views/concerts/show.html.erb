@@ -13,7 +13,13 @@
     <li>
       <%= @concert.time %>
     </li>
+    <% @artists.each do |a| %>
+    <li>
+      <%= a.name %>
+    </li>
+    <% end %>
   </ul>
+
 </div>
 <div class="concert-nav">
   <ul class="concert-nav-ul">

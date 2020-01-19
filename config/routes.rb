@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'concerts/map' => 'concerts#map'
 
+  get "artists/:artist_id/map" => "artists#map"
+
   get '/login' => 'session#new'
 
   post '/login' => "session#create"

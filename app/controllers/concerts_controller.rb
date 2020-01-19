@@ -3,7 +3,8 @@ class ConcertsController < ApplicationController
   def map
     # all conerts need address
     @concerts = Concert.select(:name, :latitude, :longitude)
-    # raise "hell"
+
+  raise "hell"
   end
 
   # create
@@ -24,6 +25,7 @@ class ConcertsController < ApplicationController
 
   def show
     @concert = Concert.find params[:id]
+    @artists = @concert.artists.all
 
   end
 
