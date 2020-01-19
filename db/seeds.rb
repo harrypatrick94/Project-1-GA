@@ -52,11 +52,22 @@ puts "Songs in #{Genre.first.name}: #{Genre.first.songs.pluck(:name).join(", ")}
 puts "Songs in #{Genre.last.name}: #{Genre.last.songs.pluck(:name).join(", ")}"
 
 Artist.destroy_all
-acdc = Artist.create! name: "ACDC"
-tv = Artist.create! name: "Tunnel Vision"
+pink = Artist.create! name: "Pink floyd", image: 'https://res.cloudinary.com/dm0vmiksn/image/upload/v1579212542/vwrwnffvdwa2nudhbzwh.jpg'
+tv = Artist.create! name: "Tunnel Vision", image: "https://res.cloudinary.com/dm0vmiksn/image/upload/v1579212487/z7nsfysukasmuoasaa1o.jpg"
+stones = Artist.create! name: 'Rolling Stones', image: 'https://res.cloudinary.com/dm0vmiksn/image/upload/v1579212516/kqdwatt9r2f7yrq4bpwo.jpg'
 
 puts "Created #{Artist.count} artists, Last one called #{Artist.last.name}"
 
 Concert.destroy_all
-# stones = Concert.create name: 'Stones', address: '1 Market St, Sydney 2000, Australia', time: "7pm"
-# who  = Concert.create name: 'Who', address: '22 central ave, manly 2095', time: "8pm"
+stoneC = Concert.create! name: 'Stones', address: '1 Market St, Sydney 2000, Australia', time: "7pm"
+who  = Concert.create! name: 'Who', address: '22 central ave, manly 2095', time: "8pm"
+tvC = Concert.create! name: 'TV', address: "Stanwell Park", time: "6pm"
+
+stoneC.artists << stones << tv
+who.artists << pink << stones
+tvC.artists << tv << pink
+
+puts "Created #{Concert.count}, with the last being, #{Concert.last.name}"
+
+puts "The concert #{tvC.name} contains these Artists: #{tvC.artists.pluck(:name).join(', ')}"
+puts "The Artist #{tv.name} is playing at these concerts: #{tv.concerts.pluck(:name).join(", ")}"

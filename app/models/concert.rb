@@ -4,4 +4,6 @@ class Concert < ApplicationRecord
   #tell geocoder to actually turn above address into a lat and long (from remote api)
   # any time you create or update Dog item
   after_validation :geocode
+
+  has_and_belongs_to_many :artists 
 end
