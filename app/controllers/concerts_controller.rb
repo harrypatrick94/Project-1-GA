@@ -8,8 +8,9 @@ class ConcertsController < ApplicationController
     @concerts = Concert.select(:name, :latitude, :longitude)
     if @current_user.present?
         @local_concerts = Concert.near([@current_user.latitude, @current_user.longitude], 10, unit: :km)
+        # raise "hell"
     end
-  # raise "hell"
+
   end
 
   # create

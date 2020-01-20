@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @users = User.find params[:id]
     @user = @users.select(:name, :latitude, :longitude)
   end # map
-  
+
   def new
     # create new user
     @user = User.new
@@ -82,7 +82,7 @@ class UsersController < ApplicationController
    #strong params give new and update access to param
   def user_params
   # require and permit user
-  params.require(:user).permit(:name, :email, :image, :bio, :password, :password_confirmation, :latitude, :longitude)
+  params.require(:user).permit(:name, :email, :image, :bio, :address, :password, :password_confirmation, :latitude, :longitude)
 end # end user_params
 
 end # end user controller
