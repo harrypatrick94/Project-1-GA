@@ -3,10 +3,17 @@ class UsersController < ApplicationController
   before_action :check_for_user, except: [:new, :create]
   before_action :user_match_id, only: [:show]
   # before_action :log_out_before_login, only: [:new]
-
+  def map
+    @concerts = Concert.all
+    @concert = @concerts.select(:name, :latitude, :longitude)
+    @users = User.find params[:id]
+    @user = @users.select(:name, :latitude, :longitude)
+  end # map
+  
   def new
     # create new user
     @user = User.new
+
   end #new
 
   def create
@@ -75,7 +82,7 @@ class UsersController < ApplicationController
    #strong params give new and update access to param
   def user_params
   # require and permit user
-  params.require(:user).permit(:name, :email, :image, :bio, :password, :password_confirmation)
+  params.require(:user).permit(:name, :email, :image, :bio, :password, :password_confirmation, :latitude, :longitude)
 end # end user_params
 
 end # end user controller

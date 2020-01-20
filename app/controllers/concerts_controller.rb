@@ -1,10 +1,15 @@
 class ConcertsController < ApplicationController
 
   def map
+    # @drops = Drop.all
+    # @drop = Drop.new
+    # @line_item_new = LineItem.new
     # all conerts need address
     @concerts = Concert.select(:name, :latitude, :longitude)
-
-  raise "hell"
+    if @current_user.present?
+        @local_concerts = Concert.near([@current_user.latitude, @current_user.longitude], 10, unit: :km)
+    end
+  # raise "hell"
   end
 
   # create

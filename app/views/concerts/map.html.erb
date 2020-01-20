@@ -12,30 +12,52 @@
 </div>
 
 <script>
-
-  const concerts = <%= @concerts.to_json.html_safe %>
+  const user = <%= @current_user.attributes.slice('longitude', 'latitude').to_json.html_safe %>
+  const localConcerts = <%= @local_concerts.to_json.html_safe %>
 
   function initMap() {
 
     var bounds = new google.maps.LatLngBounds();
-    var map = new google.maps.Map(document.getElementById('map'));
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 4,
+      center: {lat: user.latitude, lng: user.longitude}
+    });
 
-    for (let i=0; i < concerts.length; i++) {
-      const concert = concerts[i];
-
-      var marker = new google.maps.Marker({
-        position: {lat: concert.latitude, lng:  concert.longitude},
+    for (let i=0; i < localConcerts.length; i++) {
+      const localConcert = localConcerts[i];
+      var concertMarker = new google.maps.Marker({
+        position: {lat: localConcert.latitude, lng:  localConcert.longitude},
         map: map,
-        title:  concert.name,
-        address: concert.address,
-        time: concert.time
-      });
+        title:  localConcert.name,
+        address: localConcert.address,
+        time: localConcert.time,
+      }); // concert marker
 
-      bounds.extend(marker.position);
-    }
+      // bounds.extend(marker.position);
+    }// for loop
 
-    map.fitBounds(bounds);
-  }
+    var userString = '<h4> THIS IS YOU! <h4>'
+    // map.fitBounds(bounds);
+    var userMarker = new google.maps.Marker({
+      position: {lat: user.latitude, lng: user.longitude},
+      map: map,
+      title: user.name,
+      icon: {
+      url: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png"
+    } // icon
+  }); // userMarker
+
+
+    bounds.extend( userMarker.position );
+    bounds.extend( concertMarker.position ); //extends bounding box to include new position on every iteration
+
+    map.fitBounds( bounds );
+
+    userMarker.addListener('click', function() {
+        userInfowindow.open(map, userMarker);
+    });
+  } // map init
+
 
 </script>
 

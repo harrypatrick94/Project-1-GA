@@ -3,9 +3,11 @@ Rails.application.routes.draw do
 
   root to: 'session#new'
 
-  get 'concerts/map' => 'concerts#map'
+  get "/users/:id/map" => 'users#map'
 
-  get "artists/:artist_id/map" => "artists#map"
+  get '/concerts/map' => 'concerts#map'
+
+  get "/artists/:artist_id/map" => "artists#map"
 
   get '/login' => 'session#new'
 
